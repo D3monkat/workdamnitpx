@@ -28,7 +28,7 @@ Config.LegInjuryTimer = 15                                   -- How much time, i
 Config.HeadInjuryChance = 25                                 -- The chance, in percent, that head injury side-effects get applied
 Config.LegInjuryChance = {                                   -- The chance, in percent, that leg injury side-effects get applied
     Running = 50,
-    Walking = 10
+    Walking = 15
 }
 Config.MajorArmoredBleedChance = 45 -- The chance, in percent, that a player will get a bleed effect when taking heavy damage while wearing armor
 Config.MaxInjuryChanceMulti = 3     -- How many times the HealthDamage value above can divide into damage taken before damage is forced to be applied
