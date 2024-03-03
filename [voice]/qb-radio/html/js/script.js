@@ -10,9 +10,10 @@ $(function() {
     });
 
     document.onkeyup = function (data) {
-        if (data.key == "Escape") { // Escape key
+        if (data.which == 27) { // Escape key
             $.post('https://qb-radio/escape', JSON.stringify({}));
-        } else if (data.key == "Enter") { // Enter key
+            QBRadio.SlideDown()
+        } else if (data.which == 13) { // Enter key
             $.post('https://qb-radio/joinRadio', JSON.stringify({
                 channel: $("#channel").val()
             }));
