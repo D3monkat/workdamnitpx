@@ -20,7 +20,8 @@ local function GiveStarterItems(source)
             info.birthdate = Player.PlayerData.charinfo.birthdate
             info.type = "Class C Driver License"
         end
-        Player.Functions.AddItem(v.item, v.amount, false, info)
+        Player.Functions.AddItem('phone', 1)
+        Player.Functions.AddItem('lockpick', 5)
     end
 end
 
