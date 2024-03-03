@@ -33,8 +33,8 @@ Config.DynamicDoors = false
 
 Config.PoliceJobNames = {  -- add multiple police jobs that are allowed to raid properties!
     "police",
-    -- "police2",
-    -- "police3",
+    "bcso",
+    "sasp",
 }
 
 Config.MinGradeToRaid = 3  -- Minimum grade to raid a property
