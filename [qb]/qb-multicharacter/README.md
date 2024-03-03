@@ -30,8 +30,8 @@ Added support for setting default number of characters per player per Rockstar l
 - [qb-weathersync](https://github.com/qbcore-framework/qb-weathersync) - For adjusting the weather while player is creating a character.
 
 ## Screenshots
-![Character Selection](https://cdn.discordapp.com/attachments/934470871333105674/1014215694394589294/unknown.png)
-![Character Registration](https://cdn.discordapp.com/attachments/934470871333105674/1014215687700488304/unknown.png)
+![Character Selection](https://i.imgur.com/EUB5X6Y.png)
+![Character Registration](https://i.imgur.com/RKxiyed.png)
 
 ## Features
 - Ability to create up to 5 characters and delete any character.
@@ -49,3 +49,7 @@ ensure qb-apartments
 ensure qb-clothing
 ensure qb-weathersync
 ```
+###### ###### ###### ###### ###### ###### ###### ######
+If you use illenium-appearance, be sure to read this
+https://docs.illenium.dev/free-resources/illenium-appearance/installation/qb-core/#add-it-to-your-server
+###### ###### ###### ###### ###### ###### ###### ######

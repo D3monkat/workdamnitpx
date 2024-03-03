@@ -1,24 +1,14 @@
 fx_version 'cerulean'
 game 'gta5'
-lua54 'yes'
-author 'Kakarot'
-description 'Allows players to create multiple characters'
-version '1.2.0'
 
-shared_scripts {
-    '@qb-core/shared/locale.lua',
-    'locales/en.lua',
-    'locales/*.lua',
-    'config.lua'
-}
+description 'amir_expert#1911 MultiCharacter'
+author 'amir_expert#1911'
+version '1.1.2'
 
-client_scripts {
-    'client/main.lua'
-}
-
-server_scripts {
+shared_script 'config.lua'
+client_script 'client/main.lua'
+server_scripts  {
     '@oxmysql/lib/MySQL.lua',
-    '@qb-apartments/config.lua',
     'server/main.lua'
 }
 
@@ -28,12 +18,20 @@ files {
     'html/index.html',
     'html/style.css',
     'html/reset.css',
-    'html/vue.js',
-    'html/swal2.js',
-    'html/profanity.js'
+    'html/profanity.js',
+    'html/script.js'
 }
 
 dependencies {
     'qb-core',
     'qb-spawn'
 }
+
+lua54 'yes'
+
+escrow_ignore {
+    'config.lua',
+    'client/main.lua',
+    'server/main.lua',
+}
+dependency '/assetpacks'

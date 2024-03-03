@@ -1,12 +1,10 @@
 local QBCore = exports['qb-core']:GetCoreObject()
-local hasDonePreloading = {}
 
 -- Functions
 
 local function GiveStarterItems(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-
     for _, v in pairs(QBCore.Shared.StarterItems) do
         local info = {}
         if v.item == "id_card" then
@@ -26,10 +24,12 @@ local function GiveStarterItems(source)
     end
 end
 
-local function loadHouseData(src)
+local function loadHouseData()
     local HouseGarages = {}
     local Houses = {}
-    local result = MySQL.query.await('SELECT * FROM houselocations', {})
+    -- local result = MySQL.Sync.fetchAll('SELECT * FROM houselocations', {}) -- new
+    local result = MySQL.query.await('SELECT * FROM houselocations', {}) -- new 2.3.1
+    -- local result = exports.oxmysql:executeSync('SELECT * FROM houselocations', {}) -- old
     if result[1] ~= nil then
         for _, v in pairs(result) do
             local owned = false
@@ -53,61 +53,43 @@ local function loadHouseData(src)
             }
         end
     end
-    TriggerClientEvent("qb-garages:client:houseGarageConfig", src, HouseGarages)
-    TriggerClientEvent("qb-houses:client:setHouseConfig", src, Houses)
+    TriggerClientEvent("qb-garages:client:houseGarageConfig", -1, HouseGarages)
+    TriggerClientEvent("qb-houses:client:setHouseConfig", -1, Houses)
 end
 
 -- Commands
 
-QBCore.Commands.Add("logout", Lang:t("commands.logout_description"), {}, false, function(source)
+QBCore.Commands.Add("logout", "Logout of Character (Admin Only)", {}, false, function(source)
     local src = source
     QBCore.Player.Logout(src)
     TriggerClientEvent('qb-multicharacter:client:chooseChar', src)
 end, "admin")
 
-QBCore.Commands.Add("closeNUI", Lang:t("commands.closeNUI_description"), {}, false, function(source)
+QBCore.Commands.Add("closeNUI", "Close Multi NUI", {}, false, function(source)
     local src = source
     TriggerClientEvent('qb-multicharacter:client:closeNUI', src)
 end)
 
 -- Events
 
-AddEventHandler('QBCore:Server:PlayerLoaded', function(Player)
-    Wait(1000) -- 1 second should be enough to do the preloading in other resources
-    hasDonePreloading[Player.PlayerData.source] = true
-end)
-
-AddEventHandler('QBCore:Server:OnPlayerUnload', function(src)
-    hasDonePreloading[src] = false
-end)
-
 RegisterNetEvent('qb-multicharacter:server:disconnect', function()
     local src = source
-    DropPlayer(src, Lang:t("commands.droppedplayer"))
+    DropPlayer(src, "You have disconnected from QBCore")
 end)
 
 RegisterNetEvent('qb-multicharacter:server:loadUserData', function(cData)
     local src = source
     if QBCore.Player.Login(src, cData.citizenid) then
-        repeat
-            Wait(10)
-        until hasDonePreloading[src]
-        print('^2[qb-core]^7 '..GetPlayerName(src)..' (Citizen ID: '..cData.citizenid..') has successfully loaded!')
+        print('^2[qb-core]^7 '..GetPlayerName(src)..' (Citizen ID: '..cData.citizenid..') has succesfully loaded!')
         QBCore.Commands.Refresh(src)
-        loadHouseData(src)
-        if Config.SkipSelection then
-            local coords = json.decode(cData.position)
-            TriggerClientEvent('qb-multicharacter:client:spawnLastLocation', src, coords, cData)
-        else
-            if GetResourceState('qb-apartments') == 'started' then
-                TriggerClientEvent('apartments:client:setupSpawnUI', src, cData)
-            else
-                TriggerClientEvent('qb-spawn:client:setupSpawns', src, cData, false, nil)
-                TriggerClientEvent('qb-spawn:client:openUI', src, true)
-            end
+        loadHouseData()
+        if Config.Housing['ps-housing'] then
+            TriggerClientEvent('ps-housing:client:setupSpawnUI', src, cData)
+        elseif Config.Housing['qb-houses'] then
+            TriggerClientEvent('apartments:client:setupSpawnUI', src, cData)
         end
-        TriggerEvent("qb-log:server:CreateLog", "joinleave", "Loaded", "green", "**".. GetPlayerName(src) .. "** (<@"..(QBCore.Functions.GetIdentifier(src, 'discord'):gsub("discord:", "") or "unknown").."> |  ||"  ..(QBCore.Functions.GetIdentifier(src, 'ip') or 'undefined') ..  "|| | " ..(QBCore.Functions.GetIdentifier(src, 'license') or 'undefined') .." | " ..cData.citizenid.." | "..src..") loaded..")
-    end
+        TriggerEvent("qb-log:server:CreateLog", "joinleave", "Loaded", "green", "**".. GetPlayerName(src) .. "** ("..(QBCore.Functions.GetIdentifier(src, 'discord') or 'undefined') .." |  ||"  ..(QBCore.Functions.GetIdentifier(src, 'ip') or 'undefined') ..  "|| | " ..(QBCore.Functions.GetIdentifier(src, 'license') or 'undefined') .." | " ..cData.citizenid.." | "..src..") loaded..")
+	end
 end)
 
 RegisterNetEvent('qb-multicharacter:server:createCharacter', function(data)
@@ -116,32 +98,33 @@ RegisterNetEvent('qb-multicharacter:server:createCharacter', function(data)
     newData.cid = data.cid
     newData.charinfo = data
     if QBCore.Player.Login(src, false, newData) then
-        repeat
-            Wait(10)
-        until hasDonePreloading[src]
-        if GetResourceState('qb-apartments') == 'started' and Apartments.Starting then
+        if Config.StartingApartment then
             local randbucket = (GetPlayerPed(src) .. math.random(1,999))
             SetPlayerRoutingBucket(src, randbucket)
-            print('^2[qb-core]^7 '..GetPlayerName(src)..' has successfully loaded!')
+            print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
-            loadHouseData(src)
+            loadHouseData()
             TriggerClientEvent("qb-multicharacter:client:closeNUI", src)
-            TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
+            
+            if Config.Housing['ps-housing'] then
+                TriggerClientEvent('ps-housing:client:setupSpawnUI', src, newData)
+            elseif Config.Housing['qb-houses'] then
+                TriggerClientEvent('apartments:client:setupSpawnUI', src, newData)
+            end
             GiveStarterItems(src)
         else
-            print('^2[qb-core]^7 '..GetPlayerName(src)..' has successfully loaded!')
+            print('^2[qb-core]^7 '..GetPlayerName(src)..' has succesfully loaded!')
             QBCore.Commands.Refresh(src)
-            loadHouseData(src)
+            loadHouseData()
             TriggerClientEvent("qb-multicharacter:client:closeNUIdefault", src)
             GiveStarterItems(src)
         end
-    end
+	end
 end)
 
 RegisterNetEvent('qb-multicharacter:server:deleteCharacter', function(citizenid)
     local src = source
     QBCore.Player.DeleteCharacter(src, citizenid)
-    TriggerClientEvent('QBCore:Notify', src, Lang:t("notifications.char_deleted") , "success")
 end)
 
 -- Callbacks
@@ -150,13 +133,17 @@ QBCore.Functions.CreateCallback("qb-multicharacter:server:GetUserCharacters", fu
     local src = source
     local license = QBCore.Functions.GetIdentifier(src, 'license')
 
-    MySQL.query('SELECT * FROM players WHERE license = ?', {license}, function(result)
+    -- MySQL.Async.execute('SELECT * FROM players WHERE license = ?', {license}, function(result) -- new
+        MySQL.query('SELECT * FROM players WHERE license = ?', {license}, function(result) -- new 2.3.1
+    -- exports.oxmysql:execute('SELECT * FROM players WHERE license = ?', {license}, function(result) -- old
         cb(result)
     end)
 end)
 
 QBCore.Functions.CreateCallback("qb-multicharacter:server:GetServerLogs", function(_, cb)
-    MySQL.query('SELECT * FROM server_logs', {}, function(result)
+    -- MySQL.Async.execute('SELECT * FROM server_logs', {}, function(result) -- new
+        MySQL.query('SELECT * FROM server_logs', {}, function(result) -- new 2.3.1
+    -- exports.oxmysql:execute('SELECT * FROM server_logs', {}, function(result) -- old
         cb(result)
     end)
 end)
@@ -171,7 +158,7 @@ QBCore.Functions.CreateCallback("qb-multicharacter:server:GetNumberOfCharacters"
             if v.license == license then
                 numOfChars = v.numberOfChars
                 break
-            else
+            else 
                 numOfChars = Config.DefaultNumberOfCharacters
             end
         end
@@ -181,34 +168,72 @@ QBCore.Functions.CreateCallback("qb-multicharacter:server:GetNumberOfCharacters"
     cb(numOfChars)
 end)
 
-QBCore.Functions.CreateCallback("qb-multicharacter:server:setupCharacters", function(source, cb)
+QBCore.Functions.CreateCallback("qb-multicharacter:server:SetupNewCharacter", function(source, cb)
     local license = QBCore.Functions.GetIdentifier(source, 'license')
     local plyChars = {}
-    MySQL.query('SELECT * FROM players WHERE license = ?', {license}, function(result)
-        for i = 1, (#result), 1 do
-            result[i].charinfo = json.decode(result[i].charinfo)
-            result[i].money = json.decode(result[i].money)
-            result[i].job = json.decode(result[i].job)
-            plyChars[#plyChars+1] = result[i]
+    -- MySQL.Async.fetchAll('SELECT * FROM players WHERE license = ?', {license}, function(result) -- new
+        MySQL.query('SELECT * FROM players WHERE license = ?', {license}, function(result) -- new 2.3.1
+    -- exports.oxmysql:execute('SELECT * FROM players WHERE license = ?', {license}, function(result) -- old
+        while result == nil do Wait(5) end
+        for k, v in pairs(result) do
+            if Config.Clothing['qb-clothing'] then
+                -- local result = MySQL.Sync.fetchAll('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- new
+                local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- new 2.3.1
+                -- local result = exports.oxmysql:executeSync('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- old
+                while result == nil do Wait(5) end
+                if result ~= nil then
+                    if result[1] ~= nil then
+                        if not tonumber(result[1].model) then
+                            plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                        else
+                            plyChars[k] = {result[1].model, result[1].skin, v.cid, v.charinfo, v}
+                        end
+                    else
+                        plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                    end
+                else
+                    plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                end
+            elseif Config.Clothing['fivem-appearance'] then
+                -- local result = MySQL.Sync.fetchAll('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- new
+                local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- new 2.3.1
+                -- local result = exports.oxmysql:executeSync('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- old
+                while result == nil do Wait(5) end
+                if result ~= nil then
+                    if result[1] ~= nil then
+                        if tonumber(result[1].model) then
+                            plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                        else
+                            plyChars[k] = {result[1].model, result[1].skin, v.cid, v.charinfo, v}
+                        end
+                    else
+                        plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                    end
+                else
+                    plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                end
+            elseif Config.Clothing['illenium-appearance'] then
+                -- local result = MySQL.Sync.fetchAll('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- new
+                local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- new 2.3.1
+                -- local result = exports.oxmysql:executeSync('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {v.citizenid, 1}) -- old
+                while result == nil do Wait(5) end
+                if result ~= nil then
+                    if result[1] ~= nil then
+                        if tonumber(result[1].model) then
+                            plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                        else
+                            plyChars[k] = {result[1].model, result[1].skin, v.cid, v.charinfo, v}
+                        end
+                    else
+                        plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                    end
+                else
+                    plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+                end
+            else
+                plyChars[k] = {nil, nil, v.cid, v.charinfo, v}
+            end
         end
         cb(plyChars)
     end)
 end)
-
-QBCore.Functions.CreateCallback("qb-multicharacter:server:getSkin", function(_, cb, cid)
-    local result = MySQL.query.await('SELECT * FROM playerskins WHERE citizenid = ? AND active = ?', {cid, 1})
-    if result[1] ~= nil then
-        cb(result[1].model, result[1].skin)
-    else
-        cb(nil)
-    end
-end)
-
-QBCore.Commands.Add("deletechar", Lang:t("commands.deletechar_description"), {{name = Lang:t("commands.citizenid"), help = Lang:t("commands.citizenid_help")}}, false, function(source,args)
-    if args and args[1] then
-        QBCore.Player.ForceDeleteCharacter(tostring(args[1]))
-        TriggerClientEvent("QBCore:Notify", source, Lang:t("notifications.deleted_other_char", {citizenid = tostring(args[1])}))
-    else
-        TriggerClientEvent("QBCore:Notify", source, Lang:t("notifications.forgot_citizenid"), "error")
-    end
-end, "god")
