@@ -96,7 +96,7 @@ Config = {
 	{ Prop = 'uwu_cup_straw', PropBone = 28422, PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 130.0},
 		EmoteLoop = true, EmoteMoving = true, }},
 ["uwu4"] = {
-	amb@world_human_drinking@coffee@male@idle_a", "idle_c", "", AnimationOptions =
+	"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "", AnimationOptions =
 	{ Prop = 'uwu_mug', PropBone = 28422, PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 130.0},
 		EmoteLoop = true, EmoteMoving = true, }},
 ["uwu5"] = {
