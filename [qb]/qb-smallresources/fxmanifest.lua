@@ -1,3 +1,5 @@
+local postalFile = 'new-postals.json'
+
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
@@ -28,3 +30,9 @@ files {
     'popgroups.ymt',
     'relationships.dat'
 }
+
+file(postalFile)
+postal_file(postalFile)
+
+
+server_export 'getPostalServer'
