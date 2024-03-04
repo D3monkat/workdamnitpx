@@ -1,7 +1,7 @@
 return {
 	General = {
 		name = 'Shop',
-		blip = nil
+		blip = nil,
 		inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 10 },
