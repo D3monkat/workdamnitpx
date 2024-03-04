@@ -3,7 +3,7 @@ return {
 ["pmochi"] = { label = "Pink Mochi", weight = 200, stack = true, close = true, description = "", client = { image = "mochipink.png", hunger = math.random(40, 50) } },
 ["gmochi"] = { label = "Green Mochi", weight = 200, stack = true, close = true, description = "", client = { image = "mochigreen.png", hunger = math.random(40, 50) } },
 ["omochi"] = { label = "Orange Mochi", weight = 200, stack = true, close = true, description = "", client = { image = "mochiorange.png", hunger = math.random(40, 50) } },
-
+--to push
 ["bobatea"] = { label = "Boba Teai", weight = 200, stack = true, close = true, description = "", client = { image = "bubbletea.png", thirst = math.random(40, 50) } },
 ["bbobatea"] = { label = "Blue Boba Tea", weight = 200, stack = true, close = true, description = "", client = { image = "bubbleteablue.png", thirst = math.random(40, 50) } },
 ["gbobatea"] = { label = "Green Boba Tea", weight = 200, stack = true, close = true, description = "", client = { image = "bubbleteagreen.png", thirst = math.random(40, 50) } },
