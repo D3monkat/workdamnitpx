@@ -21,14 +21,14 @@ Citizen.CreateThread(function()
     -- wait for postals to load
     while postals == nil do Wait(1) end
 
-    local delay = math.max(Config.updateDelay and tonumber(Config.updateDelay) or 300, 50)
+    local delay = math.max(Meow.updateDelay and tonumber(Meow.updateDelay) or 300, 50)
     if not delay or tonumber(delay) <= 0 then
         error("Invalid render delay provided, it must be a number > 0")
     end
 
     local postals = postals
-    local deleteDist = Config.blip.distToDelete
-    local formatTemplate = Config.text.format
+    local deleteDist = Meow.blip.distToDelete
+    local formatTemplate = Meow.text.format
     local _total = #postals
 
     while true do
@@ -65,8 +65,8 @@ end)
 
 -- text display thread
 Citizen.CreateThread(function()
-    local posX = Config.text.posX
-    local posY = Config.text.posY
+    local posX = Meow.text.posX
+    local posY = Meow.text.posY
     local _string = "STRING"
     local _scale = 0.42
     local _font = 4

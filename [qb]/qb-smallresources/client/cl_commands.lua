@@ -20,7 +20,7 @@ RegisterCommand('postal', function(_, args)
                 color = { 255, 0, 0 },
                 args = {
                     'Postals',
-                    Config.blip.deleteText
+                    Meow.blip.deleteText
                 }
             })
         end
@@ -42,18 +42,18 @@ RegisterCommand('postal', function(_, args)
         local blip = AddBlipForCoord(foundPostal[1][1], foundPostal[1][2], 0.0)
         pBlip = { hndl = blip, p = foundPostal }
         SetBlipRoute(blip, true)
-        SetBlipSprite(blip, Config.blip.sprite)
-        SetBlipColour(blip, Config.blip.color)
-        SetBlipRouteColour(blip, Config.blip.color)
+        SetBlipSprite(blip, Meow.blip.sprite)
+        SetBlipColour(blip, Meow.blip.color)
+        SetBlipRouteColour(blip, Meow.blip.color)
         BeginTextCommandSetBlipName('STRING')
-        AddTextComponentSubstringPlayerName(format(Config.blip.blipText, pBlip.p.code))
+        AddTextComponentSubstringPlayerName(format(Meow.blip.blipText, pBlip.p.code))
         EndTextCommandSetBlipName(blip)
 
         TriggerEvent('chat:addMessage', {
             color = { 255, 0, 0 },
             args = {
                 'Postals',
-                format(Config.blip.drawRouteText, foundPostal.code)
+                format(Meow.blip.drawRouteText, foundPostal.code)
             }
         })
     else
@@ -61,7 +61,7 @@ RegisterCommand('postal', function(_, args)
             color = { 255, 0, 0 },
             args = {
                 'Postals',
-                Config..blip.notExistText
+                Meow..blip.notExistText
             }
         })
     end
