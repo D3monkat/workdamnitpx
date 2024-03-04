@@ -16,7 +16,7 @@ Locations["uwucafe"] = {
     },
     blip = {
         coords = vec3(-581.06, -1066.22, 22.34),
-        blipcolor = 48,
+        blipcolor = 61,
         blipsprite = 89,
         blipscale = 0.7,
         blipdisp = 6,
