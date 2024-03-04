@@ -20,8 +20,8 @@ local function GiveStarterItems(source)
             info.birthdate = Player.PlayerData.charinfo.birthdate
             info.type = "Class C Driver License"
         end
-        Player.Functions.AddItem('phone', 1)
-        Player.Functions.AddItem('lockpick', 5)
+        exports['qb-core']:AddItem('phone', 1)
+        exports['qb-core']:AddItem('lockpick', 5)
     end
 end
 
