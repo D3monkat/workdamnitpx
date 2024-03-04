@@ -28,11 +28,32 @@ QBShared.Jobs = {
 		defaultDuty = true,
 		offDutyPay = false,
 		grades = {
-			['0'] = { name = 'Recruit', payment = 50 },
-			['1'] = { name = 'Officer', payment = 75 },
-			['2'] = { name = 'Sergeant', payment = 100 },
-			['3'] = { name = 'Lieutenant', payment = 125 },
-			['4'] = { name = 'Chief', isboss = true, payment = 150 },
+			['0'] = { name = 'Recruit', payment = 144 },
+			['1'] = { name = 'Trooper', payment = 155 },
+			['2'] = { name = 'Senior Trooper', payment = 167 },
+			['3'] = { name = 'Corporal', payment = 181 },
+			['4'] = { name = 'Lieutenant', payment = 195 },
+			['5'] = { name = 'Captain', payment = 211 },
+			['6'] = { name = 'Major', payment = 228 },
+			['7'] = { name = 'Colonel', payment = 246 },
+			['8'] = { name = 'Commissioner', isboss = true, payment = 266 }
+		},
+	},
+	sasp = {
+		label = 'State Patrol',
+		type = 'leo',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+			['0'] = { name = 'Recruit', payment = 144 },
+			['1'] = { name = 'Trooper', payment = 155 },
+			['2'] = { name = 'Senior Trooper', payment = 167 },
+			['3'] = { name = 'Corporal', payment = 181 },
+			['4'] = { name = 'Lieutenant', payment = 195 },
+			['5'] = { name = 'Captain', payment = 211 },
+			['6'] = { name = 'Major', payment = 228 },
+			['7'] = { name = 'Colonel', payment = 246 },
+			['8'] = { name = 'Commissioner', isboss = true, payment = 266 }
 		},
 	},
 	ambulance = {
