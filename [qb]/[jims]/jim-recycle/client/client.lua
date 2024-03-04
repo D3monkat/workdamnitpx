@@ -76,7 +76,7 @@ CreateThread(function()
 	for i = 1, #Config.Locations["BottleBanks"] do local loc = Config.Locations["BottleBanks"][i]
 		local nameBank = "BottleBank"..i
 		Peds[nameBank] = makePed(loc.Ped.model, loc.coords, true, false, loc.Ped.scenario, nil)
-		if loc.Blip.blipEnable then makeBlip({ coords = loc.coords, sprite = loc.Blip.sprite, col = loc.Blip.col, name = loc.Blip.name } ) end
+		-- if loc.Blip.blipEnable then makeBlip({ coords = loc.coords, sprite = loc.Blip.sprite, col = loc.Blip.col, name = loc.Blip.name } ) end
 		Targets[nameBank] =
 			exports['qb-target']:AddBoxZone(nameBank, vec3(loc.coords.x, loc.coords.y, loc.coords.z-1), 1.0, 1.0, { name=nameBank, heading = loc.coords.w, debugPoly = Config.Debug, minZ = loc.coords.z-1, maxZ=loc.coords.z+1 },
 				{ options = { { event = "jim-recycle:Bottle:Menu", icon = "fas fa-certificate", label = Loc[Config.Lan].target["sell_bottles"], job = Config.JobRole, Ped = Peds[nameBank] }, },
