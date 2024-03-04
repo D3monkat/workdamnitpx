@@ -61,7 +61,7 @@ Config = {
 
 		BankBlips = false, -- Enable this if you disabled qb-banking and need bank locations
 
-		Gabz = true, 	-- "true" to enable Gabz Bank locations
+		Gabz = false, 	-- "true" to enable Gabz Bank locations
 						-- this corrects the ATM/Bank Cashier + Ticket Cash in locations
 
 		menuLogo = "https://static.wikia.nocookie.net/gtawiki/images/b/bd/Fleeca-GTAV-Logo.png",
@@ -69,16 +69,16 @@ Config = {
 	},
 
 	ATMs = {
-		enable = true,
-		showBlips = true,
+		enable = false,
+		showBlips = false,
 
 		ATMModels = { `prop_atm_01`, `prop_atm_02`, `prop_atm_03`, `prop_fleeca_atm`, `gabz_sm_pb_atmframe` },
 
 	},
 
 	Banks = {
-		enable = true,
-		showBlips = true,
+		enable = false,
+		showBlips = false,
 
 	},
 
@@ -90,8 +90,8 @@ Config = {
 	},
 
 	Receipts = {
-		TicketSystem = true, 		-- Enable this if you want to use the ticket system false
-		TicketSystemAll = true, 	-- Enable this to give tickets to all workers clocked in
+		TicketSystem = false, 		-- Enable this if you want to use the ticket system false
+		TicketSystemAll = false, 	-- Enable this to give tickets to all workers clocked in
 
 		Commission = true, 			-- Set this to true to enable Commissions and give the person charging a percentage of the total
 		CommissionAll = false, 		-- Set this to true to give commission to workers clocked in
@@ -148,6 +148,8 @@ Config = {
 		-- No tickets for these, it's just commission (0.25 = 25%)
 		FineJobs = {
 			['police'] = { Commission = 0.25, },
+			['sasp'] = { Commission = 0.25, },
+			['bcso'] = { Commission = 0.25, },
 			['ambulance'] = { Commission = 0.25, },
 		},
 		FineJobConfirmation = false, --"true" makes it so fines need confirmation, "false" skips this ands just removes the money
