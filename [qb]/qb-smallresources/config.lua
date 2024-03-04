@@ -8,7 +8,7 @@ Meow = {
     text = {
         -- The text to display on-screen for the nearest postal. 
         -- Formatted using Lua strings, http://www.lua.org/pil/20.html
-        format = '~y~Nearest Postal~w~: %s (~g~%.2fm~w~)',
+        format = '',
 
         -- ScriptHook PLD Position
         --posX = 0.225,
