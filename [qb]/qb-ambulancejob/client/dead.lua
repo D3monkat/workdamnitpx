@@ -127,42 +127,38 @@ end)
 -- Threads
 
 emsNotified = false
-
 CreateThread(function()
-    while true do
+	while true do
         local sleep = 1000
-        if isDead or InLaststand then
+		if isDead or InLaststand then
             sleep = 5
             local ped = PlayerPedId()
-            if IsPauseMenuActive() then
-                SetFrontendActive(false)
-            end
-            DisableAllControlActions(0)
-            EnableControlAction(0, 1, true)
-            EnableControlAction(0, 2, true)
-            EnableControlAction(0, 245, true)
-            EnableControlAction(0, 38, true)
-            EnableControlAction(0, 0, true)
-            EnableControlAction(0, 322, true)
-            EnableControlAction(0, 288, true)
-            EnableControlAction(0, 213, true)
-            EnableControlAction(0, 249, true)
-            EnableControlAction(0, 46, true)
-            EnableControlAction(0, 47, true)
+            -- DisableAllControlActions(0)
+            -- EnableControlAction(0, 1, true)
+			-- EnableControlAction(0, 2, true)
+			-- EnableControlAction(0, 245, true)
+            -- EnableControlAction(0, 38, true)
+            -- EnableControlAction(0, 0, true)
+            -- EnableControlAction(0, 322, true)
+            -- EnableControlAction(0, 288, true)
+            -- EnableControlAction(0, 213, true)
+            -- EnableControlAction(0, 249, true)
+            -- EnableControlAction(0, 46, true)
+            -- EnableControlAction(0, 47, true)
 
             if isDead then
-                if not isInHospitalBed then
-                    if deathTime > 0 then
-                        DrawTxt(0.93, 1.44, 1.0, 1.0, 0.6, Lang:t('info.respawn_txt', { deathtime = math.ceil(deathTime) }), 255, 255, 255, 255)
-                    else
-                        DrawTxt(0.865, 1.44, 1.0, 1.0, 0.6, Lang:t('info.respawn_revive', { holdtime = hold, cost = Config.BillCost }), 255, 255, 255, 255)
-                    end
-                end
+                -- if not isInHospitalBed then
+                --     if deathTime > 0 then
+                --         DrawTxt(0.93, 1.44, 1.0,1.0,0.6, Lang:t('info.respawn_txt', {deathtime = math.ceil(deathTime)}), 255, 255, 255, 255)
+                --     else
+                --         DrawTxt(0.865, 1.44, 1.0, 1.0, 0.6, Lang:t('info.respawn_revive', {holdtime = hold, cost = Config.BillCost}), 255, 255, 255, 255)
+                --     end
+                -- end
 
                 if IsPedInAnyVehicle(ped, false) then
-                    loadAnimDict('veh@low@front_ps@idle_duck')
-                    if not IsEntityPlayingAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 3) then
-                        TaskPlayAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 1.0, 1.0, -1, 1, 0, 0, 0, 0)
+                    loadAnimDict("veh@low@front_ps@idle_duck")
+                    if not IsEntityPlayingAnim(ped, "veh@low@front_ps@idle_duck", "sit", 3) then
+                        TaskPlayAnim(ped, "veh@low@front_ps@idle_duck", "sit", 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                     end
                 else
                     if isInHospitalBed then
@@ -182,27 +178,27 @@ CreateThread(function()
             elseif InLaststand then
                 sleep = 5
 
-                if LaststandTime > Config.MinimumRevive then
-                    DrawTxt(0.94, 1.44, 1.0, 1.0, 0.6, Lang:t('info.bleed_out', { time = math.ceil(LaststandTime) }), 255, 255, 255, 255)
-                else
-                    DrawTxt(0.845, 1.44, 1.0, 1.0, 0.6, Lang:t('info.bleed_out_help', { time = math.ceil(LaststandTime) }), 255, 255, 255, 255)
-                    if not emsNotified then
-                        DrawTxt(0.91, 1.40, 1.0, 1.0, 0.6, Lang:t('info.request_help'), 255, 255, 255, 255)
-                    else
-                        DrawTxt(0.90, 1.40, 1.0, 1.0, 0.6, Lang:t('info.help_requested'), 255, 255, 255, 255)
-                    end
+                -- if LaststandTime > Laststand.MinimumRevive then
+                --     DrawTxt(0.94, 1.44, 1.0, 1.0, 0.6, Lang:t('info.bleed_out', {time = math.ceil(LaststandTime)}), 255, 255, 255, 255)
+                -- else
+                --     DrawTxt(0.845, 1.44, 1.0, 1.0, 0.6, Lang:t('info.bleed_out_help', {time = math.ceil(LaststandTime)}), 255, 255, 255, 255)
+                --     if not emsNotified then
+                --         DrawTxt(0.91, 1.40, 1.0, 1.0, 0.6, Lang:t('info.request_help'), 255, 255, 255, 255)
+                --     else
+                --         DrawTxt(0.90, 1.40, 1.0, 1.0, 0.6, Lang:t('info.help_requested'), 255, 255, 255, 255)
+                --     end
 
-                    if IsControlJustPressed(0, 47) and not emsNotified then
-                        TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
-                        emsNotified = true
-                    end
-                end
+                --     if IsControlJustPressed(0, 47) and not emsNotified then
+                --         TriggerServerEvent('hospital:server:ambulanceAlert', Lang:t('info.civ_down'))
+                --         emsNotified = true
+                --     end
+                -- end
 
                 if not isEscorted then
                     if IsPedInAnyVehicle(ped, false) then
-                        loadAnimDict('veh@low@front_ps@idle_duck')
-                        if not IsEntityPlayingAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 3) then
-                            TaskPlayAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 1.0, 1.0, -1, 1, 0, 0, 0, 0)
+                        loadAnimDict("veh@low@front_ps@idle_duck")
+                        if not IsEntityPlayingAnim(ped, "veh@low@front_ps@idle_duck", "sit", 3) then
+                            TaskPlayAnim(ped, "veh@low@front_ps@idle_duck", "sit", 1.0, 1.0, -1, 1, 0, 0, 0, 0)
                         end
                     else
                         loadAnimDict(lastStandDict)
@@ -212,9 +208,9 @@ CreateThread(function()
                     end
                 else
                     if IsPedInAnyVehicle(ped, false) then
-                        loadAnimDict('veh@low@front_ps@idle_duck')
-                        if IsEntityPlayingAnim(ped, 'veh@low@front_ps@idle_duck', 'sit', 3) then
-                            StopAnimTask(ped, 'veh@low@front_ps@idle_duck', 'sit', 3)
+                        loadAnimDict("veh@low@front_ps@idle_duck")
+                        if IsEntityPlayingAnim(ped, "veh@low@front_ps@idle_duck", "sit", 3) then
+                            StopAnimTask(ped, "veh@low@front_ps@idle_duck", "sit", 3)
                         end
                     else
                         loadAnimDict(lastStandDict)
@@ -224,7 +220,7 @@ CreateThread(function()
                     end
                 end
             end
-        end
+		end
         Wait(sleep)
-    end
+	end
 end)
