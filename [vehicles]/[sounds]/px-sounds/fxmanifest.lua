@@ -7,6 +7,9 @@ files {
 	'sfx/**/*.awc',
 	'sfx/**/*.awc',
   }
+  data_file 'AUDIO_GAMEDATA' 'audioconfig/ecoboostv6_game.dat'
+data_file 'AUDIO_SOUNDDATA' 'audioconfig/ecoboostv6_sounds.dat'
+data_file 'AUDIO_WAVEPACK' 'sfx/dlc_ecoboostv6'
   data_file "AUDIO_SYNTHDATA" "audioconfig/kc107hemipwagon4inch_amp.dat"
 data_file "AUDIO_GAMEDATA" "audioconfig/kc107hemipwagon4inch_game.dat"
 data_file "AUDIO_SOUNDDATA" "audioconfig/kc107hemipwagon4inch_sounds.dat"
