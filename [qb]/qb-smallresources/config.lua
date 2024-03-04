@@ -3,7 +3,7 @@ Config = {}
  -- enables version checking (if this is enabled and there is no new version it won't display a message anyways)
  versionCheck = true,
 
- text = {
+ Config.text = {
      -- The text to display on-screen for the nearest postal. 
      -- Formatted using Lua strings, http://www.lua.org/pil/20.html
      format = '~y~Nearest Postal~w~: %s (~g~%.2fm~w~)',
@@ -17,7 +17,7 @@ Config = {}
      posY = 0.963
  },
 
- blip = {
+ Config.blip = {
      -- The text to display in chat when setting a new route. 
      -- Formatted using Lua strings, http://www.lua.org/pil/20.html
      blipText = 'Postal Route %s',
@@ -46,7 +46,7 @@ Config = {}
 
  -- How often in milliseconds the postal code is updated on each client.
  -- I wouldn't recommend anything lower than 50ms for performance reasons
- updateDelay = nil,
+ Config.updateDelay = nil,
 
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
 Config.PauseMapText = ''                                     -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
