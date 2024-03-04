@@ -33,9 +33,8 @@ return {
 
 	Liquor = {
 		name = 'Liquor Store',
-		blip = {
-			id = 93, colour = 69, scale = 0.8
-		}, inventory = {
+		blip = nil,
+		inventory = {
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
 			{ name = 'burger', price = 15 },
@@ -59,9 +58,8 @@ return {
 
 	YouTool = {
 		name = 'YouTool',
-		blip = {
-			id = 402, colour = 69, scale = 0.8
-		}, inventory = {
+		blip = nil,
+ inventory = {
 			{ name = 'lockpick', price = 10 }
 		}, locations = {
 			vec3(2748.0, 3473.0, 55.67),
@@ -73,9 +71,8 @@ return {
 
 	Ammunation = {
 		name = 'Ammunation',
-		blip = {
-			id = 110, colour = 69, scale = 0.8
-		}, inventory = {
+		blip = nil,
+		inventory = {
 			{ name = 'ammo-9', price = 5, },
 			{ name = 'WEAPON_KNIFE', price = 200 },
 			{ name = 'WEAPON_BAT', price = 100 },
@@ -106,9 +103,8 @@ return {
 	PoliceArmoury = {
 		name = 'Police Armoury',
 		groups = shared.police,
-		blip = {
-			id = 110, colour = 84, scale = 0.8
-		}, inventory = {
+		blip = nil,	
+		inventory = {
 			{ name = 'ammo-9', price = 5, },
 			{ name = 'ammo-rifle', price = 5, },
 			{ name = 'WEAPON_FLASHLIGHT', price = 200 },
@@ -128,9 +124,8 @@ return {
 		groups = {
 			['ambulance'] = 0
 		},
-		blip = {
-			id = 403, colour = 69, scale = 0.8
-		}, inventory = {
+		blip = nil,
+		 inventory = {
 			{ name = 'medikit', price = 26 },
 			{ name = 'bandage', price = 5 }
 		}, locations = {
