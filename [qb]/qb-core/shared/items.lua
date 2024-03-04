@@ -67,7 +67,12 @@ goldpan 					 = {name = "goldpan", 			  	  		label = "Gold Panning Tray", 		weig
 
 bottle 						 = {name = "bottle", 			  	  		label = "Empty Bottle", 			weight = 10, 		type = "item", 		image = "bottle.png", 				unique = false, 	useable = false, 	shouldClose = false, combinable = nil,   description = "A glass bottle"},
 can 						 = {name = "can", 			  	  			label = "Empty Can", 				weight = 10, 		type = "item", 		image = "can.png", 					unique = false, 	useable = false, 	shouldClose = false, combinable = nil,   description = "An empty can, good for recycling"},
-    -- WEAPONS
+-- Jim-Recycle Items
+recyclablematerial  = {name = "recyclablematerial",   label = "Recycle Box",      weight = 100, type = "item", 		image = "recyclablematerial.png",   unique = false, 	useable = false, 	shouldClose = false, combinable = nil,   description = "A box of Recyclable Materials"},
+bottle              = {name = "bottle",               label = "Empty Bottle",     weight = 10,  type = "item", 		image = "bottle.png",               unique = false, 	useable = false, 	shouldClose = false, combinable = nil,   description = "A glass bottle"},
+can                 = {name = "can",                  label = "Empty Can",        weight = 10,  type = "item", 		image = "can.png",                  unique = false, 	useable = false, 	shouldClose = false, combinable = nil,   description = "An empty can, good for recycling"},
+
+-- WEAPONS
     -- Melee
     weapon_unarmed               = { name = 'weapon_unarmed', label = 'Fists', weight = 1000, type = 'weapon', ammotype = nil, image = 'placeholder.png', unique = true, useable = false, description = 'Fisticuffs' },
     weapon_dagger                = { name = 'weapon_dagger', label = 'Dagger', weight = 1000, type = 'weapon', ammotype = nil, image = 'weapon_dagger.png', unique = true, useable = false, description = 'A short knife with a pointed and edged blade, used as a weapon' },
