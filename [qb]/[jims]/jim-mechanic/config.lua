@@ -228,7 +228,7 @@ Config = {
 		odoCustomisation = {
 			showHealthValues = false,								-- Always show health numbers on icons (otherwise only shows in debug mode)
 
-			screenPosition = { top = 95, left = 25 },				-- where on the screen it will appear (percentages) default bottom right
+			screenPosition = { top = 95, left = 20 },				-- where on the screen it will appear (percentages) default bottom right
 			backgroundColor = { 0, 0, 0 },							-- the colour of the huds background
 			backgroundColorTransparency = 0.5,						-- the transparency of the huds background
 
