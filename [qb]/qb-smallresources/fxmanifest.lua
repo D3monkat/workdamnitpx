@@ -1,4 +1,4 @@
-local postalFile = 'new-postals.json'
+local postalFile = 'oxrp-postals.json'
 
 fx_version 'cerulean'
 game 'gta5'
