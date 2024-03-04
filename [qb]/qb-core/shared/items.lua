@@ -1,5 +1,10 @@
 QBShared = QBShared or {}
 QBShared.Items = {
+
+    tree_lumber						= {name = "tree_lumber",  	  		label = "Lumber",	  		weight = 50, 		type = "item", 		image = "lumber.png", 			unique = false, 	useable = false, 	shouldClose = true,   	combinable = nil,   description = ""},
+	tree_bark						= {name = "tree_bark",  	  		label = "Tree Bark",	  	weight = 50, 		type = "item", 		image = "treebark.png", 		unique = false, 	useable = false, 	shouldClose = true,   	combinable = nil,   description = ""},
+	wood_plank						= {name = "wood_plank",  	  		label = "Wood Plank",	  	weight = 50, 		type = "item", 		image = "woodplank.png", 		unique = false, 	useable = false, 	shouldClose = true,   	combinable = nil,   description = ""},
+
     spikestrip 				     = {name = 'spikestrip',					label = 'Spikestrip', 				weight = 100, 		type = 'item', 		image = 'spikestrip.png', 			unique = false, 	useable = true, 	shouldClose = true,	   combinable = nil,   description = 'Police Spikestrip'},
 
     	-- jim-mining stuff
