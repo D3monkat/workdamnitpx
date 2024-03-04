@@ -4,7 +4,7 @@ Locations["uwucafe"] = {
     enable = true,
     job = "catcafe",
     label = "Cat Cafe",
-    autoClock = { enter = true, exit = true, },
+    autoClock = { enter = false, exit = false, },
     logo = "https://i.imgur.com/03eA7N0.png",
     zones = {
         vec2(-591.15808105469, -1087.8620605469),

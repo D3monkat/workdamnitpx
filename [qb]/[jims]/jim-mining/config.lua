@@ -5,8 +5,8 @@ Config = {
 	System = {
 		Debug = false, -- enable debug mode
 		Menu = "ox",			--"qb" or "ox"
-		ProgressBar = "gta",		--"qb" or "ox"
-		Notify = "gta",			--"qb" or "ox"
+		ProgressBar = "ox",		--"qb" or "ox"
+		Notify = "ox",			--"qb" or "ox"
 
 	},
 	General = {

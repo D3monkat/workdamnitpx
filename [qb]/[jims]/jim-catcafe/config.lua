@@ -8,13 +8,13 @@ Config = {
 		Debug = false,
 
 		Menu = "ox",			-- "qb", "ox", "gta"
-		Notify = "gta",			-- "qb", "ox", "esx, "okok", "gta"
-		drawText = "gta",		-- "qb", "ox", "gta"
-		ProgressBar = "gta", 	-- "qb", "ox", "gta"
+		Notify = "ox",			-- "qb", "ox", "esx, "okok", "gta"
+		drawText = "ox",		-- "qb", "ox", "gta"
+		ProgressBar = "ox", 	-- "qb", "ox", "gta"
 
 	},
 	Crafting = {
-		craftCam = true,
+		craftCam = false,
 		MultiCraft = true,
 		MultiCraftAmounts = { [1], [5], [10] },
 		showItemBox = true,
@@ -68,7 +68,7 @@ Crafting = {
 	ChoppingBoard = {
 		Header = Loc[Config.Lan].menu["header_chop"],
 		Anims = { animDict = "anim@heists@prison_heiststation@cop_reactions", anim = "cop_b_idle" },
-		progressBar = { label = Loc[Config.Lan].progressbar["progress_make"], time = 5000, },
+		progressBar = { label = Loc[Config.Lan].progressbar["progress_make"], time = 100, },
 		Recipes = {
 			{ bmochi = { ['sugar'] = 1, ['flour'] = 1, ['blueberry'] = 1, },
 				["amount"] = 1,
@@ -96,7 +96,7 @@ Crafting = {
 	Oven = {
 		Header = Loc[Config.Lan].menu["header_oven"],
 		Anims = { animDict = "amb@prop_human_bbq@male@base", anim = "base" },
-		progressBar = { label = Loc[Config.Lan].progressbar["progress_make"], time = 5000, },
+		progressBar = { label = Loc[Config.Lan].progressbar["progress_make"], time = 100, },
 		Recipes = {
 			{ nekocookie = { ['flour'] = 1, ['milk'] = 1, },
 				["amount"] = 1,
@@ -121,7 +121,7 @@ Crafting = {
 	Coffee = {
 		Header = Loc[Config.Lan].menu["header_coffee"],
 		Anims = { animDict = "mp_ped_interaction", anim = "handshake_guy_a" },
-		progressBar = { label = Loc[Config.Lan].progressbar["progress_pour"], time = 5000, },
+		progressBar = { label = Loc[Config.Lan].progressbar["progress_pour"], time = 100, },
 		Recipes = {
 			{ catcoffee = { },
 				["amount"] = 1,
@@ -157,7 +157,7 @@ Crafting = {
 	Hob = {
 		Header = Loc[Config.Lan].menu["header_hob"],
 		Anims = { animDict = "amb@prop_human_bbq@male@base", anim = "base" },
-		progressBar = { label = Loc[Config.Lan].progressbar["progress_make"], time = 5000, },
+		progressBar = { label = Loc[Config.Lan].progressbar["progress_make"], time = 100, },
 		Recipes = {
 			{ miso = { ['nori'] = 1, ['tofu'] = 1, ['onion'] = 1, },
 				["amount"] = 1,
