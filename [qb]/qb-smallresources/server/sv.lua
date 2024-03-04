@@ -1,7 +1,7 @@
 -- version check
 Citizen.CreateThread(function()
     local vRaw = LoadResourceFile(GetCurrentResourceName(), 'version.json')
-    if vRaw and Config..versionCheck then
+    if vRaw and Config.versionCheck then
         local v = json.decode(vRaw)
         local url = 'https://raw.githubusercontent.com/DevBlocky/nearest-postal/master/version.json'
         PerformHttpRequest(url, function(code, res)
