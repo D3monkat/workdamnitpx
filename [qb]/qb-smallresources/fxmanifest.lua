@@ -1,4 +1,4 @@
-local postalFile = 'oxrp-postals.json'
+local postalFile = 'ocrp-postals.json'
 
 fx_version 'cerulean'
 game 'gta5'
@@ -12,7 +12,8 @@ shared_scripts {
     '@qb-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua',
-    'config.lua'
+    'config.lua',
+    'init.lua'
 }
 server_script 'server/*.lua'
 client_scripts {

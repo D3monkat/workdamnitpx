@@ -1,53 +1,5 @@
 Config = {}
 
- -- enables version checking (if this is enabled and there is no new version it won't display a message anyways)
- versionCheck = true,
-
- Config.text = {
-     -- The text to display on-screen for the nearest postal. 
-     -- Formatted using Lua strings, http://www.lua.org/pil/20.html
-     format = '~y~Nearest Postal~w~: %s (~g~%.2fm~w~)',
-
-     -- ScriptHook PLD Position
-     --posX = 0.225,
-     --posY = 0.963,
-
-     -- vMenu PLD Position
-     posX = 0.22,
-     posY = 0.963
- },
-
- Config.blip = {
-     -- The text to display in chat when setting a new route. 
-     -- Formatted using Lua strings, http://www.lua.org/pil/20.html
-     blipText = 'Postal Route %s',
-
-     -- The sprite ID to display, the list is available here:
-     -- https://docs.fivem.net/docs/game-references/blips/#blips
-     sprite = 8,
-
-     -- The color ID to use (default is 3, light blue)
-     -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
-     color = 3,
-
-     -- When the player is this close (in meters) to the destination, 
-     -- the blip will be removed.
-     distToDelete = 100.0,
-
-     -- The text to display in chat when a route is deleted
-     deleteText = 'Route deleted',
-
-     -- The text to display in chat when drawing a new route
-     drawRouteText = 'Drawing a route to %s',
-
-     -- The text to display when a postal is not found.
-     notExistText = "That postal doesn't exist"
- },
-
- -- How often in milliseconds the postal code is updated on each client.
- -- I wouldn't recommend anything lower than 50ms for performance reasons
- Config.updateDelay = nil,
-
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
 Config.PauseMapText = ''                                     -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
 Config.HarnessUses = 20
