@@ -22,8 +22,12 @@ local function CreateDutyBlips(playerId, playerLabel, playerJob, playerLocation)
         SetBlipScale(blip, 1.0)
         if playerJob == 'police' then
             SetBlipColour(blip, 38)
+        elseif playerJob == 'sasp' then
+                SetBlipColour(blip, 15)
+        elseif playerJob == 'bcso' then
+                    SetBlipColour(blip, 10)
         else
-            SetBlipColour(blip, 5)
+            SetBlipColour(blip, 1)
         end
         SetBlipAsShortRange(blip, true)
         BeginTextCommandSetBlipName('STRING')
