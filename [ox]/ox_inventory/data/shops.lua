@@ -1,9 +1,8 @@
 return {
 	General = {
 		name = 'Shop',
-		blip = {
-			id = 59, colour = 69, scale = 0.8
-		}, inventory = {
+		blip = nil,
+		inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 10 },
 			{ name = 'cola', price = 10 },
