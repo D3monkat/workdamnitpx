@@ -1,5 +1,7 @@
 QBShared = QBShared or {}
 QBShared.Items = {
+    spikestrip 				     = {name = 'spikestrip',					label = 'Spikestrip', 				weight = 100, 		type = 'item', 		image = 'spikestrip.png', 			unique = false, 	useable = true, 	shouldClose = true,	   combinable = nil,   description = 'Police Spikestrip'},
+
     	-- jim-mining stuff
 stone 		 	 			 = {name = "stone",           				label = "Stone",	 				weight = 2000, 	    type = "item", 		image = "stone.png", 				unique = false, 	useable = false, 	shouldClose = false, combinable = nil,   description = "Stone woo"},
 
