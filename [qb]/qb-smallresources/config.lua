@@ -61,6 +61,80 @@ Meow = {
 
  --- end postal
 
+ -- pause screen config
+
+----------------------------------------------------------------------------------------------------
+-- # BACKGROUND SECTION # --
+----------------------------------------------------------------------------------------------------
+-- Allows you to set the preferred background Color from a list of available options.
+Config.Background = "background_blue"
+
+-- Available Options --
+-- background_blue
+-- background_darkblue
+-- background_darkerblue
+-- background_darkgreen
+-- background_green
+-- background_other
+-- background_pink
+-- background_projectsloth
+-- background_red
+-- background_yellow
+
+-- Allows you to change the opactiy of the Background
+Config.Opacity = 100
+
+----------------------------------------------------------------------------------------------------
+-- # HEADER and OPTIONS SECTION # --
+----------------------------------------------------------------------------------------------------
+
+Config.Header = {
+    -- LEFT MENU CONFIG
+    ["TITLE"] = "Pursuit-X",
+    ["SUBTITLE"] = "",
+
+    ["MAP"] = "Map",
+    ["GAME"] = "Exit Game",
+    ["LEAVE"] = "Return to Server List",
+    ["QUIT"] = "Return to Desktop",
+    ["INFO"] = "Information",
+    ["STATS"] = "Statistics",
+    ["SETTINGS"] = "Settings",
+    ["GALLERY"] = "Gallery",
+    ["KEYBIND"] = "Main Keybinds",
+    ["EDITOR"] = "Rockstar Editor",
+
+    -- RIGHT MENU CONFIG
+    ["SERVER_NAME"] = "Pursuit-X",
+    ["SERVER_TEXT"] = "Join the discord!",
+    ["SERVER_DISCORD"] = "https://discord.gg/rFQyJ4G5TT"
+}
+
+--Allows you to Change the Colour ( Use this Website: https://rgbacolorpicker.com/ )
+Config.RGBA = {
+    LINE = { -- Line over the Options
+        ["RED"] = 159,
+        ["GREEN"] = 183,
+        ["BLUE"] = 16,
+        ["ALPHA"] = 255,
+    },
+    STYLE = { -- Pause Menu Options
+        ["RED"] = 0,
+        ["GREEN"] = 0,
+        ["BLUE"] = 0,
+        ["ALPHA"] = 186,
+    },
+    WAYPOINT = { -- Waypoint
+        ["RED"] = 164,
+        ["GREEN"] = 76,
+        ["BLUE"] = 242,
+        ["ALPHA"] = 255,
+    },
+}
+
+
+ --- end
+
 
 
 Config.UseTarget = GetConvar('UseTarget', 'false') == 'true' -- Use qb-target interactions (don't change this, go to your server.cfg and add `setr UseTarget true` to use this and just that from true to false or the other way around)
