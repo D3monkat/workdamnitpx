@@ -1,12 +1,15 @@
 Config = {}
 Meow = {}
--- nearestpostal
 Meow = {
+
+    -- spikes
     AllowedJobs = {
         'police',
         'bsco',
         'sasp'
     },
+    
+-- nearestpostal
     -- enables version checking (if this is enabled and there is no new version it won't display a message anyways)
     versionCheck = true,
 
