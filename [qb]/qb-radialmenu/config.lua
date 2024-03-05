@@ -2,8 +2,8 @@ Config = {}
 Config.Keybind = 'F1' -- FiveM Keyboard, this is registered keymapping, so needs changed in keybindings if player already has this mapped.
 Config.Toggle = false -- use toggle mode. False requires hold of key
 Config.UseWhilstWalking = false -- use whilst walking
-Config.EnableExtraMenu = true
-Config.Fliptime = 15000
+Config.EnableExtraMenu = false
+Config.Fliptime = math.random(15000, 35000)
 
 Config.MenuItems = {
     [1] = {
