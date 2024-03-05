@@ -1,5 +1,29 @@
 QBShared = QBShared or {}
 QBShared.Items = {
+    ammonium_nitrate = {name = 'ammonium_nitrate', label = 'Ammonium nitrate', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	carbon = {name = 'carbon', label = 'Carbon', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	codeine = {name = 'codeine', label = 'Codeine', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	drink_sprite = {name = 'drink_sprite', label = 'Sprite', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	drug_ecstasy = {name = 'drug_ecstasy', label = 'Ecstasy', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	drug_lean = {name = 'drug_lean', label = 'Lean', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	drug_lsd = {name = 'drug_lsd', label = 'LSD', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	drug_meth = {name = 'drug_meth', label = 'Meth', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	hydrogen = {name = 'hydrogen', label = 'Hydrogen', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	ice = {name = 'ice', label = 'Ice', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	jolly_ranchers = {name = 'jolly_ranchers', label = 'Jolly Ranchers', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	liquid_sulfur = {name = 'liquid_sulfur', label = 'Liquid Sulfur', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	muriatic_acid = {name = 'muriatic_acid', label = 'Muriatic Acid', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	nitrogen = {name = 'nitrogen', label = 'Nitrogen', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	oxygen = {name = 'oxygen', label = 'Oxygen', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	pseudoefedrine = {name = 'pseudoefedrine', label = 'Pseudoefedrine', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	red_sulfur = {name = 'red_sulfur', label = 'Red Sulfur', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	sodium_hydroxide = {name = 'sodium_hydroxide', label = 'Sodium hydroxide', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	water = {name = 'water', label = 'Water', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	cannabis = {name = 'cannabis', label = 'Cannabis', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	green_gelato_cannabis = {name = 'green_gelato_cannabis', label = 'Green Gelato Cannabis', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	opium = {name = 'opium', label = 'Opium', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+	cocaine = {name = 'cocaine', label = 'Cocaine', weight = 500, type = 'item', image = 'your_image.png', unique = false, useable = true, shouldClose = false, combinable = nil},
+
 prisonslushie 				 = {name = 'prisonslushie', 				label = 'Slushie', 			        weight = 1000, 		type = 'item', 		image = 'prisonslushie.png', 		unique = false, 		useable = true, 	shouldClose = true,	    combinable = nil,   description = 'Slushie'},
 prisonspoon 				 = {name = 'prisonspoon', 					label = 'Spoon', 				    weight = 1000, 		type = 'item', 		image = 'prisonspoon.png', 			unique = false, 		useable = false, 	shouldClose = false,	combinable = nil,   description = 'Cafeteria spoon'},
 prisonrock 					 = {name = 'prisonrock', 					label = 'Coarse Rock', 				weight = 1000, 		type = 'item', 		image = 'prisonrock.png', 			unique = false, 		useable = false, 	shouldClose = false,	combinable = nil,   description = 'A very big coarse rock'},
@@ -14,6 +38,16 @@ prisonchemicals 			 = {name = 'prisonchemicals', 				label = 'Chemicals', 				we
 prisonwateringcan 			 = {name = 'prisonwateringcan', 			label = 'Watering Can', 			weight = 1000, 		type = 'item', 		image = 'prisonwateringcan.png', 	unique = true, 			useable = false, 	shouldClose = false,	combinable = nil,   description = 'Watering can with a Bolingbroke Penitentiary label.'},
 prisonfarmseeds 			 = {name = 'prisonfarmseeds', 				label = 'Plant Seeds', 				weight = 1000, 		type = 'item', 		image = 'prisonfarmseeds.png', 		unique = false, 		useable = false, 	shouldClose = false,	combinable = nil,   description = 'Seeds, water, nutrition and love make happy plants'},
 prisonfarmnutrition 		 = {name = 'prisonfarmnutrition', 			label = 'Plant Nutrition', 			weight = 1000, 		type = 'item', 		image = 'prisonfarmnutrition.png', 	unique = false, 		useable = false, 	shouldClose = false,	combinable = nil,   description = 'Plant nutrition with a Bolingbroke Penitentiary label'},
+cayo_weed1 					= {name = "cayo_weed1", 					label = "Weed Branch", 				weight = 2000, 		type = "item", 		image = "cayo_weed1.png", 				unique = false, 		useable = false, 	shouldClose = false,	   	combinable = nil,   description = "Fresh weed..."},
+cayo_weed2 					= {name = "cayo_weed2", 					label = "Weed Buds", 				weight = 1500, 		type = "item", 		image = "cayo_weed2.png", 				unique = false, 		useable = false, 	shouldClose = false,	   	combinable = nil,   description = "Weed buds..."},
+cayo_weed3 					= {name = "cayo_weed3", 					label = "Weed Brick", 				weight = 12000, 	type = "item", 		image = "cayo_weed3.png", 				unique = false, 		useable = true, 	shouldClose = true,	   		combinable = nil,   description = "Weed brick from Cayo Perico..."},
+cayo_coke1 					= {name = "cayo_coke1", 					label = "Coca Leaves", 				weight = 2000, 		type = "item", 		image = "cayo_coke1.png", 				unique = false, 		useable = false, 	shouldClose = false,	   	combinable = nil,   description = "Coca leaves..."},
+cayo_coke2 					= {name = "cayo_coke2", 					label = "Cocaine", 					weight = 1500, 		type = "item", 		image = "cayo_coke2.png", 				unique = false, 		useable = false, 	shouldClose = false,	   	combinable = nil,   description = "Cocaine Hydrochloride..."},
+cayo_coke3 					= {name = "cayo_coke3", 					label = "Coke Brick", 				weight = 12000, 	type = "item", 		image = "cayo_coke3.png", 				unique = false, 		useable = true, 	shouldClose = true,	   		combinable = nil,   description = "Coke brick from Cayo Perico..."},
+cayo_deliverynote 			= {name = "cayo_deliverynote", 				label = "Delivery Note", 			weight = 1000, 		type = "item", 		image = "cayo_deliverynote.png", 		unique = true, 			useable = false, 	shouldClose = false,	   	combinable = nil,   description = ""},
+
+-- WARNING DUPLICATE: BELOW USED IN QB-LABS TOO
+empty_plastic_bag 			 = {name = "empty_plastic_bag", 			label = "Empty Ziploc baggies",		weight = 100, 		type = "item", 		image = "empty-plastic-bag.png", 	unique = false, 	useable = false, 	shouldClose = false,	combinable = nil,   description = "A small and empty plastic bag."},
 
 
     tree_lumber						= {name = "tree_lumber",  	  		label = "Lumber",	  		weight = 50, 		type = "item", 		image = "lumber.png", 			unique = false, 	useable = false, 	shouldClose = true,   	combinable = nil,   description = ""},

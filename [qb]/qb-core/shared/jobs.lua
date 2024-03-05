@@ -22,6 +22,27 @@ QBShared.Jobs = {
             },
         },
     },
+	cayoperico = {
+		label = 'Cayo Perico',
+        defaultDuty = true,
+        offDutyPay = false,
+		grades = {
+			['0'] = {
+				name = 'Member',
+				payment = 100
+			},
+			['1'] = {
+				name = 'Capo',
+				payment = 150
+			},
+			['2'] = {
+				name = 'Druglord',
+				payment = 200,
+				bankAuth = true,
+				isboss = true
+			},
+		},
+	},
 
 	catcafe = {
 		label = 'Cat Cafe',

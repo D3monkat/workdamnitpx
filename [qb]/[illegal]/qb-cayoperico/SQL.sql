@@ -1,0 +1,1 @@
+INSERT INTO `management_funds` (`job_name`, `amount`, `type`) VALUES ('cayoperico', '0', 'boss');
