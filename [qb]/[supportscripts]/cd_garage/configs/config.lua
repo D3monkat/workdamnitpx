@@ -596,7 +596,7 @@ Config.GangGarages = {
 --╚═════╝ ╚══════╝╚═╝╚═╝     ╚══════╝
 
 
-Config.Unique_Blips = true --Do you want each garage to be named by its unique id, for example: 'Garage A'? (If disabled all garages will be called 'Garage').
+Config.Unique_Blips = false --Do you want each garage to be named by its unique id, for example: 'Garage A'? (If disabled all garages will be called 'Garage').
 Config.Blip = { --You can find more info on blips here - https://docs.fivem.net/docs/game-references/blips.
     ['car'] = {
         sprite = 357, --Icon of the blip.
