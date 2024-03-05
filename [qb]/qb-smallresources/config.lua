@@ -291,6 +291,14 @@ Config.WeapDraw = {
     variants = { 130, 122, 3, 6, 8 },
     weapons = {
         --'WEAPON_STUNGUN',
+        	--Custom Weapon
+	'WEAPON_DE',
+	'WEAPON_GLOCK17',
+	'WEAPON_M9',
+	'WEAPON_M1911',
+	'WEAPON_FNX45',
+	'WEAPON_GLOCK18C',
+	'WEAPON_GLOCK22',
         'WEAPON_PISTOL',
         'WEAPON_PISTOL_MK2',
         'WEAPON_COMBATPISTOL',
