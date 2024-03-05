@@ -273,22 +273,37 @@ RegisterNetEvent('lockpicks:UseLockpick', function(isAdvanced)
 
     local difficulty = isAdvanced and 'easy' or 'medium' -- Easy for advanced lockpick, medium by default
     local success = exports['qb-minigames']:Skillbar(difficulty)
-
     local chance = math.random()
-    if success then
-        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-        lastPickedVehicle = vehicle
-
-        if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
-            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
+    exports['ps-ui']:Circle(function(success)
+        if success then
+            TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))            
+            Wait(250)
+            exports['ps-dispatch']:CarJacking(vehicle)
+            print("success")
         else
-            QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
-            TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
+            print("fail")
+            TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+            exports['ps-dispatch']:CarJacking(vehicle)
         end
-    else
-        TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
-        AttemptPoliceAlert("steal")
-    end
+    end, 2, 20) -- NumberOfCircles, MS
+
+
+
+
+    -- if success then
+    --     TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+    --     lastPickedVehicle = vehicle
+
+    --     if GetPedInVehicleSeat(vehicle, -1) == PlayerPedId() then
+    --         TriggerServerEvent('qb-vehiclekeys:server:AcquireVehicleKeys', QBCore.Functions.GetPlate(vehicle))
+    --     else
+    --         QBCore.Functions.Notify(Lang:t("notify.vlockpick"), 'success')
+    --         TriggerServerEvent('qb-vehiclekeys:server:setVehLockState', NetworkGetNetworkIdFromEntity(vehicle), 1)
+    --     end
+    -- else
+    --     TriggerServerEvent('hud:server:GainStress', math.random(1, 4))
+    --     AttemptPoliceAlert("steal")
+    -- end
 
     if isAdvanced then
         if chance <= Config.RemoveLockpickAdvanced then

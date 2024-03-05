@@ -528,6 +528,14 @@ return {
 		weight = 160,
 	},
 
+	['finger_scanner'] = {
+		label = 'Finger Scanner',
+		weight = 0,
+		stack = true,
+		close = true,
+		description = ""
+	},
+
 	['phone'] = {
 		label = 'Phone',
 		weight = 190,
@@ -2907,6 +2915,7 @@ return {
 			image = "sessantacamo_attachment.png",
 		}
 	},
+	
 
 	["weed_nutrition"] = {
 		label = "Plant Fertilizer",

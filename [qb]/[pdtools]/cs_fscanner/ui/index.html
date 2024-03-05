@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Studio Finger Scanner</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="image/scanner.png" class="tester-img">
+        <div class="scanner-image">
+            <lord-icon
+                src="https://cdn.lordicon.com/ugbgnnqc.json"
+                trigger="click"
+                delay="250"
+                colors="primary:#ffffff,secondary:#242424"
+                style="width:60px;height:60px;position:absolute;right:-6px; cursor: pointer;">
+            </lord-icon>
+        </div>
+        <div class="main-inside">
+            <div class="welcome-screen">
+                <div class="lspd-logo">
+                    <img src="image/logo.png" class="logo-image">
+                </div>
+                <div class="welcome-text">
+                    <div class="welcome-text-1">Welcome</div>
+                    <div class="FSD-title">Fingerprint Scanner Department</div>
+                </div>
+                <div class="login-buttons">
+                    <div class="bn3 new_scan">New Scan</div>
+                    <div class="bn4 view_history">History</div>
+                </div>
+            </div>
+            <div class="new-scan-screen">
+                <div>
+                    <p class="finger-print-text">Please put your finger on the scanner</p>
+                </div>
+                <div>
+                    <img src="image/face-recognition.gif" class="face-scanner-gif">
+                </div>
+                <div id="progressBar">
+                    <span id="progressBar-value"></span>
+                </div>
+                <div>
+                    <span class="home-button" id="scan_back" style="
+                        color: #38ad8a;
+                        font-size: 27px;
+                        margin-top: px;
+                        height: 30px;
+                        width: 31px;
+                        cursor: pointer;
+                        margin-bottom: 0px;">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </span> 
+                </div>
+            </div>
+            <div class="information-screen">
+                <div class="player-info">
+                    <div class="report-title report_head">Report</div>
+                    <div class="info-content">
+                        <span>ID :</span>
+                        <span id="id" style="cursor: pointer;">change_me</span>
+                    </div>
+                    <div class="info-content">
+                        <span>First Name:</span>
+                        <span id="first-name"></span>
+                    </div>
+                    <div class="info-content">
+                        <span>Last Name:</span>
+                        <span id="last-name"></span>
+                    </div>
+                    <div class="info-content">
+                        <span>DOB:</span>
+                        <span id="dob"></span>
+                    </div>
+                    <div class="info-content">
+                        <span>Gender:</span>
+                        <span id="gender"></span>
+                    </div>
+                </div>
+                <div>
+                    <span class="home-button" style="
+                        color: white;
+                        font-size: 27px;
+                        margin-top: px;
+                        height: 30px;
+                        width: 31px;
+                        cursor: pointer;
+                        margin-bottom: 0px;">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </span> 
+                </div>
+            </div>
+            
+            <div class="history-screen">
+                <div class="history-player-info">
+                    <div class="report-title history_head">History</div>
+                </div>
+                    <div style="width: 130px;display: flex;justify-content: space-around; margin-bottom: 5px">
+                        <span class="home-button" style="
+                            color: white;
+                            font-size: 27px;
+                            margin-top: px;
+                            height: 30px;
+                            width: 31px;
+                            cursor: pointer;
+                            margin-bottom: 0px;">
+                            <i class="fas fa-chevron-circle-left"></i>
+                        </span> 
+                
+                        <span class="clear-button" style="
+                            color: white;
+                            font-size: 27px;
+                            margin-top: px;
+                            height: 30px;
+                            width: 31px;
+                            cursor: pointer;
+                            margin-bottom: 0px;">
+                            <i class="fas fa-trash"></i>
+                        </span>   
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>
