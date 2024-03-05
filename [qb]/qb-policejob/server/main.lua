@@ -228,13 +228,14 @@ QBCore.Commands.Add('jail', Lang:t('commands.jail_player'), {}, false, function(
     end
 end)
 
-QBCore.Commands.Add('unjail', Lang:t('commands.unjail_player'), { { name = 'id', help = Lang:t('info.player_id') } }, true, function(source, args)
+QBCore.Commands.Add("unjail", Lang:t("commands.unjail_player"), {{name = "id", help = Lang:t('info.player_id')}}, true, function(source, args)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player.PlayerData.job.type == 'leo' and Player.PlayerData.job.onduty then
-        TriggerClientEvent('prison:client:UnjailPerson', tonumber(args[1]))
+    if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
+        local playerId = tonumber(args[1])
+        exports['qb-jail']:unJailPlayer(playerId)
     else
-        TriggerClientEvent('QBCore:Notify', src, Lang:t('error.on_duty_police_only'), 'error')
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.on_duty_police_only"), 'error')
     end
 end)
 
@@ -774,24 +775,24 @@ RegisterNetEvent('police:server:JailPlayer', function(playerId, time)
     local targetPed = GetPlayerPed(playerId)
     local playerCoords = GetEntityCoords(playerPed)
     local targetCoords = GetEntityCoords(targetPed)
-    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, 'Attempted exploit abuse') end
+    if #(playerCoords - targetCoords) > 2.5 then return DropPlayer(src, "Attempted exploit abuse") end
 
     local Player = QBCore.Functions.GetPlayer(src)
     local OtherPlayer = QBCore.Functions.GetPlayer(playerId)
-    if not Player or not OtherPlayer or Player.PlayerData.job.type ~= 'leo' then return end
+    if not Player or not OtherPlayer or Player.PlayerData.job.name ~= "police" then return end
 
-    local currentDate = os.date('*t')
+    local currentDate = os.date("*t")
     if currentDate.day == 31 then
         currentDate.day = 30
     end
 
-    OtherPlayer.Functions.SetMetaData('injail', time)
-    OtherPlayer.Functions.SetMetaData('criminalrecord', {
-        ['hasRecord'] = true,
-        ['date'] = currentDate
+    exports['qb-jail']:jailPlayer(playerId, true, time)
+    OtherPlayer.Functions.SetMetaData("criminalrecord", {
+        ["hasRecord"] = true,
+        ["date"] = currentDate
     })
-    TriggerClientEvent('police:client:SendToJail', OtherPlayer.PlayerData.source, time)
-    TriggerClientEvent('QBCore:Notify', src, Lang:t('info.sent_jail_for', { time = time }))
+    TriggerClientEvent("police:client:SendToJail", OtherPlayer.PlayerData.source, time)
+    TriggerClientEvent('QBCore:Notify', src, Lang:t("info.sent_jail_for", {time = time}))
 end)
 
 RegisterNetEvent('police:server:SetHandcuffStatus', function(isHandcuffed)
