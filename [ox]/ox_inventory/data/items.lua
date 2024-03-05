@@ -1,4 +1,67 @@
 return {
+	['gold'] = {
+		label = 'Gold',
+		weight = 160,
+	},
+	['bag'] = {
+		label = 'Bag',
+		weight = 160,
+	},
+	['drill'] = {
+		label = 'Drill',
+		weight = 160,
+	},
+	['big_drill'] = {
+		label = 'Big Drill',
+		weight = 160,
+	},
+	['thermite'] = {
+		label = 'Thermite',
+		weight = 160,
+	},
+	['hack_usb'] = {
+		label = 'Hack USB',
+		weight = 160,
+	},
+	['diamond'] = {
+		label = 'Diamond',
+		weight = 160,
+	},
+	['cutter'] = {
+		label = 'Cutter',
+		weight = 160,
+	},
+	['vangelico_key'] = {
+		label = 'Vangelico Key',
+		weight = 160,
+	},
+	['crack_kit'] = {
+		label = 'Crack Kit',
+		weight = 160,
+	},
+	['diamond'] = {
+		label = 'Diamond',
+		weight = 160,
+	},
+	['goldwatch'] = {
+		label = 'Gold Watch',
+		weight = 160,
+	},
+	['ring'] = {
+		label = 'Ring',
+		weight = 160,
+	},
+	['necklace'] = {
+		label = 'Necklace',
+		weight = 160,
+	},
+	['van_necklace'] = {
+		label = 'vannecklace',
+		weight = 160,
+	},
+	
+	
+	
 	-- Custom Weapons
     ['WEAPON_AK47'] 		 	= { label = 'AK-47', 		    weight = 1000,	durability = 0.0,	ammoname = 'ammo-rifle',},  
     ['WEAPON_DE'] 					= { label = 'Desert Eagle',	    weight = 1000,	durability = 0.0,	ammoname = 'ammo-45',},     

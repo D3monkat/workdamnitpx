@@ -1,0 +1,83 @@
+["drill"] = {
+    ["name"] = "drill",
+    ["label"] = "Drill",
+    ["weight"] = 200,
+    ["type"] = "item",
+    ["image"] = "drill.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["shouldClose"] = false,
+    ["combinable"] = nil,
+    ["description"] = "0x0x"
+},
+["bag"] = {
+    ["name"] = "bag",
+    ["label"] = "Bag",
+    ["weight"] = 5,
+    ["type"] = "item",
+    ["image"] = "bag.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["shouldClose"] = false,
+    ["combinable"] = nil,
+    ["description"] = "Bag"
+},
+["thermite"] = {
+    ["name"] = "thermite",
+    ["label"] = "Thermite Bomb",
+    ["weight"] = 100,
+    ["type"] = "weapon",
+    ["ammotype"] = nil,
+    ["image"] = "weapon_stickybomb.png",
+    ["unique"] = true,
+    ["useable"] = false,
+    ["description"] = "0x0x"
+},
+["hack_usb"] = {
+    ["name"] = "hack_usb",
+    ["label"] = "Hack USB",
+    ["weight"] = 100,
+    ["type"] = "item",
+    ["image"] = "usb_device.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["shouldClose"] = true,
+    ["combinable"] = nil,
+    ["description"] = "Handy software to shut down some systems"
+},
+["big_drill"] = {
+    ["name"] = "big_drill",
+    ["label"] = "big_drill",
+    ["weight"] = 200,
+    ["type"] = "item",
+    ["image"] = "big_drill.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["shouldClose"] = false,
+    ["combinable"] = nil,
+    ["description"] = "0x0x"
+},
+["gold"] = {
+    ["name"] = "gold",
+    ["label"] = "Gold Bar",
+    ["weight"] = 200,
+    ["type"] = "item",
+    ["image"] = "blowtorch.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["shouldClose"] = false,
+    ["combinable"] = nil,
+    ["description"] = "0x0x"
+},
+["diamond"] = {
+    ["name"] = "diamond",
+    ["label"] = "Diamond Box",
+    ["weight"] = 200,
+    ["type"] = "item",
+    ["image"] = "blowtorch.png",
+    ["unique"] = false,
+    ["useable"] = false,
+    ["shouldClose"] = false,
+    ["combinable"] = nil,
+    ["description"] = "0x0x"
+}
