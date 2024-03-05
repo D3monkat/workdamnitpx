@@ -687,6 +687,22 @@ local function garage()
 end
 
 if Config.UseTarget then
+    local bones = {'boot'}
+exports['qb-target']:AddTargetBone(bones, {
+    options = {
+        {num = 1, type = "client", icon = 'fas fa-shirt', label = 'Outfits',
+        action = function()
+            TriggerEvent("illenium-appearance:client:openOutfitMenu", PlayerJob.name)
+        end,
+        canInteract = function(entity)
+            local vehclass = GetVehicleClass(GetEntityModel(entity))
+            if vehclass ~= 18 and (PlayerJob.name ~= "police" or PlayerJob.name ~= "bcso" PlayerJob.name ~= "sasp" or or PlayerJob.type ~= "leo") then return end
+            return true
+        end,
+        }
+    },
+    distance = 1.0,
+})
     CreateThread(function()
         -- Toggle Duty
         for k, v in pairs(Config.Locations['duty']) do

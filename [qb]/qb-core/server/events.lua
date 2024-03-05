@@ -7,11 +7,23 @@ AddEventHandler('chatMessage', function(_, _, message)
     end
 end)
 
+-- AddEventHandler('playerDropped', function(reason)
+--     local src = source
+--     if not QBCore.Players[src] then return end
+--     local Player = QBCore.Players[src]
+--     TriggerEvent('qb-log:server:CreateLog', 'joinleave', 'Dropped', 'red', '**' .. GetPlayerName(src) .. '** (' .. Player.PlayerData.license .. ') left..' .. '\n **Reason:** ' .. reason)
+--     Player.Functions.Save()
+--     QBCore.Player_Buckets[Player.PlayerData.license] = nil
+--     QBCore.Players[src] = nil
+-- end)
 AddEventHandler('playerDropped', function(reason)
     local src = source
+    local ped = GetPlayerPed(src)
+    local armor = GetPedArmour(ped)
     if not QBCore.Players[src] then return end
     local Player = QBCore.Players[src]
-    TriggerEvent('qb-log:server:CreateLog', 'joinleave', 'Dropped', 'red', '**' .. GetPlayerName(src) .. '** (' .. Player.PlayerData.license .. ') left..' .. '\n **Reason:** ' .. reason)
+    TriggerEvent('qb-log:server:CreateLog', 'joinleave', 'Dropped', 'red', '**' .. GetPlayerName(src) .. '** (' .. Player.PlayerData.license .. ') left..' ..'\n **Reason:** ' .. reason)
+    Player.Functions.SetMetaData('armor', armor)
     Player.Functions.Save()
     QBCore.Player_Buckets[Player.PlayerData.license] = nil
     QBCore.Players[src] = nil
