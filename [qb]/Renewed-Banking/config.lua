@@ -40,10 +40,14 @@ Config = {
             model = 'ig_barry',
             coords = vector4(1174.8, 2708.2, 38.09, 178.52)
         },
-        [8] = { -- paleto
+        [8] = { -- paleto vector4(-1065.43, -2745.53, 21.34, 244.5)
             model = 'u_m_m_bankman',
             coords = vector4(-112.22, 6471.01, 31.63, 134.18),
             createAccounts = true
-        }
+        },
+        [9] = {
+            model = 'ig_barry',
+            coords = vector4(-1065.43, -2745.53, 21.34, 244.5)
+        },
     }
 }

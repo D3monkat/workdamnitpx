@@ -68,7 +68,7 @@ Config.Keys = {
     StartHotwire_Key = Config.Keys['E'] --The key to start hotwiring a vehicle (default E).
 }
 
-Config.UniqueGarages = true --Do you want to only be able to get your car from the garage you last put it in?
+Config.UniqueGarages = false --Do you want to only be able to get your car from the garage you last put it in?
 Config.SaveAdvancedVehicleDamage = true --Do you want to save poped tyres, broken doors and broken windows and re-apply them all when spawning a vehicle?
 Config.UseExploitProtection = false --Do you want to enable the cheat engine protection to check the vehicle hashes when a vehicle is stored?
 Config.ResetGarageState = true --Do you want the in_garage state of all vehicles to be reset when the script starts/restarts?
@@ -122,7 +122,9 @@ Config.Impound = {
     chat_command = 'impound', --Customise the chat command to impound vehicles.
 
     Authorized_Jobs = { --Only jobs inside this table can impound vehicles or unimpound vehicles.
-        ['police'] = true,
+    ['police'] = true,
+    ['sasp'] = true,
+    ['bcso'] = true,
         ['mechanic'] = true,
         --['add_more_here'] = true,
     },
@@ -260,20 +262,20 @@ Config.VehicleKeys = {
     },
 
     Lock = {
-        ENABLE = true, --Do you want to use the vehicle locking system?
-        lock_from_inside = true, --Do you want to also lock the vehicle from the inside when the vehicle is locked? (meaning when the vehicle is locked players can not exit).
+        ENABLE = false, --Do you want to use the vehicle locking system?
+        lock_from_inside = false, --Do you want to also lock the vehicle from the inside when the vehicle is locked? (meaning when the vehicle is locked players can not exit).
         command = 'vehlock', --Customise the chat command.
         key = 'm' --Customise the key.
     },
 
     Lockpick = {
-        ENABLE = true, --Do you want to use the vehicle lockpick system?
+        ENABLE = false, --Do you want to use the vehicle lockpick system?
         command = { --Do you want players to use a chat command to start lockpicking a vehicle?
-            ENABLE = true,
+            ENABLE = false,
             chat_command = 'lockpick' --Customise the chat command.
         },
         usable_item = { --Do you want players to use a usable item to lockpick a vehicle?
-            ENABLE = true,
+            ENABLE = false,
             item_name = 'lockpick' --The name of the usable item to start lockpicking a vehicle.
         }
     },
@@ -289,7 +291,7 @@ Config.VehicleKeys = {
 
 
 Config.Mileage = {
-    ENABLE = true, --Do you want to use the built in vehicle mileage system? The higher the miles the lower the vehicles max health will be. (or you can repurpose this for any other use).
+    ENABLE = false, --Do you want to use the built in vehicle mileage system? The higher the miles the lower the vehicles max health will be. (or you can repurpose this for any other use).
     chat_command = 'checkmiles', --Customise the chat command to check your vehicles miles and max health.
     mileage_multiplier = 1.0, --If you increase this number it will increase how fast vehicles gain miles. (decrease to lower).
     speed_metrics = 'miles', --(miles/kilometers) Choose what you want the mileage to display as.
@@ -403,7 +405,7 @@ Config.StaffPerms = {
 
 
 Config.InsideGarage = {
-    ENABLE = true, --Do you want to allow players to use the inside garage?
+    ENABLE = false, --Do you want to allow players to use the inside garage?
     only_showcars_inthisgarage = false, --Do you want the inside garage to only show the vehicles which are currently stored at that garage (eg., garage A).  (this works for inside garage only, even with this enabled all the cars will show in the outside UI).
     shell_z_axis = 30, --This is how low under the ground the garage shell will spawn, you could use math.random(10,50) to make it random each time so players dont see each other in their garage.
     shell_time_script = 'easytime', --Choose which time script you are using so we can set the time when you enter the shell. [ 'easytime' / 'vsync' / 'qbcore' / 'other' ].
