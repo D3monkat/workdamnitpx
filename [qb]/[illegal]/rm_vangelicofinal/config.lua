@@ -3,16 +3,16 @@ Config = {}
 
 Config['VangelicoHeist'] = {
     ['framework'] = {
-        name = 'ESX', -- Only ESX or QB.
-        scriptName = 'es_extended', -- Framework script name work framework exports. (Example: qb-core or es_extended)
+        name = 'QB', -- Only ESX or QB.
+        scriptName = 'qb-core', -- Framework script name work framework exports. (Example: qb-core or es_extended)
         eventName = 'esx:getSharedObject', -- If your framework using trigger event for shared object, you can set in here.
         targetScript = 'ox_target' -- Target script name (qtarget or qb-target or ox_target)
     },
     ['bagClothesID'] = 45,
     ['buyerFinishScene'] = true,
-    ["dispatch"] = "default", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
+    ["dispatch"] = "ps-dispatch", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
     ['requiredPoliceCount'] = 0, -- required police count for start heist
-    ['dispatchJobs'] = {'police', 'sheriff'},
+    ['dispatchJobs'] = {'police', 'sasp'},
     ['nextRob'] = 7200, -- Seconds for next heist.
     ['requiredItems'] = { -- Add this items to database or shared. Don't change the order, you can change the item names.
         'bag',

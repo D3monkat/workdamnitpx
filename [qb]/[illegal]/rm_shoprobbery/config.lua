@@ -2,13 +2,13 @@ Config = {}
 
 Config['ShopRobbery'] = {
     ['framework'] = {
-        name = 'ESX', -- Only ESX or QB.
-        scriptName = 'es_extended', -- Only for QB users.
+        name = 'QB', -- Only ESX or QB.
+        scriptName = 'qb-core', -- Framework script name work framework exports. (Example: qb-core or es_extended)
         eventName = 'esx:getSharedObject', -- Only for ESX users.
     },
-    ["dispatch"] = "default", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
-    ['requiredPoliceCount'] = 0, -- required police count for start heist
-    ['dispatchJobs'] = {'police', 'sheriff'},
+    ["dispatch"] = "ps-dispatch", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
+    ['requiredPoliceCount'] = 2, -- required police count for start heist
+    ['dispatchJobs'] = {'police', 'sasp'},
     ['cooldown'] = { -- If you set globalCooldown to true, players can rob one shop in same time. Cooldown time is the time it takes to each shop or global.
         globalCooldown = false,
         time = 20,

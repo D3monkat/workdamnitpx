@@ -3,15 +3,15 @@ Config = {}
 
 Config['FleecaHeist'] = {
     ['framework'] = {
-        name = 'ESX', -- Only ESX or QB.
-        scriptName = 'es_extended', -- Framework script name work framework exports. (Example: qb-core or es_extended)
+        name = 'QB', -- Only ESX or QB.
+        scriptName = 'qb-core', -- Framework script name work framework exports. (Example: qb-core or es_extended)
         eventName = 'esx:getSharedObject', -- If your framework using trigger event for shared object, you can set in here.
     },
     ['bagClothesID'] = 45,
     ['buyerFinishScene'] = true,
-    ["dispatch"] = "default", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
-    ['requiredPoliceCount'] = 0, -- required police count for start heist
-    ['dispatchJobs'] = {'police', 'sheriff'},
+    ["dispatch"] = "ps-dispatch", -- cd_dispatch | qs-dispatch | ps-dispatch | rcore_dispatch | default
+    ['requiredPoliceCount'] = 3, -- required police count for start heist
+    ['dispatchJobs'] = {'police', 'sasp'},
     ['cooldown'] = { -- If you set globalCooldown to true, players can rob one Fleeca in same time. Cooldown time is the time it takes to each Fleeca or global.
         globalCooldown = true,
         time = 7200,
