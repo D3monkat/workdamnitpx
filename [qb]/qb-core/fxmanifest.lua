@@ -1,11 +1,12 @@
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
-author 'Kakarot'
-description 'Core resource for the framework, contains all the core functionality and features'
-version '1.2.6'
+author 'Kat'
+description 'Main file for small sources for PX'
+version '1.0.0'
 
 shared_scripts {
+    '@ox_lib/init.lua',
     'config.lua',
     'shared/locale.lua',
     'locale/en.lua',

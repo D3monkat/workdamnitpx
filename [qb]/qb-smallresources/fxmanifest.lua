@@ -8,7 +8,8 @@ author 'Kakarot'
 description 'Various small code snippets compiled into one resource for ease of use'
 version '1.4.0'
 
-shared_scripts {
+shared_scripts {    
+    '@ox_lib/init.lua',
     '@qb-core/shared/locale.lua',
     'locales/en.lua',
     'locales/*.lua',

@@ -14,7 +14,7 @@ Config.JobVehicleModel = "17mov_DeliveryCar"                        -- Vehicle J
 Config.VehicleBackBone = "handle_dside_r"                           -- Only used when Config.Target == false. On coords of this bone, the 3D Text about interact with vehicle is displayed.
 Config.VehicleBootOffset = 5                                        -- Means 5 meters back from basic vehicle coords. Used when trying to take parcel out of the vehicle.
 Config.VehicleSearchingScenario = "prop_human_parking_meter"        -- Scenario used while "searcing" inside vehicle.
-Config.Price = 100                                                  -- 100$ per one delivery
+Config.Price = math.random(50,250)                                                  -- 100$ per one delivery
 Config.BlockHostFromWorking = true                                  -- Means that if players are working in group, then the host only can drive veh, parntner needs to deliver. Set to false if you want also host to be able to deliver
 Config.EnableVehicleTeleporting = true                              -- If its true, then the script will teleport the host to the company vehicle. If its false, then the company vehicle will apeear, but the whole squad need to go enter the car manually
 Config.enableSpawningPedsInDoors = true                             -- Set to false if you don't want to use peds in doors. 
