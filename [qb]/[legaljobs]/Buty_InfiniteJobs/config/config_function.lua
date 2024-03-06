@@ -54,7 +54,7 @@ function Blips(NPC)
         SetBlipScale(v.blip, 0.7)
         SetBlipAsShortRange(v.blip, true)
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentSubstringPlayerName("Infinite Jobs")
+        AddTextComponentSubstringPlayerName("DLR")
         EndTextCommandSetBlipName(v.blip)
     end
 end
