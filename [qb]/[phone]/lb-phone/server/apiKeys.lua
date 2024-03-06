@@ -1,23 +1,23 @@
 -- Webhook for instapic posts, recommended to be a public channel
-INSTAPIC_WEBHOOK = "https://canary.discord.com/api/webhooks/"
+INSTAPIC_WEBHOOK = "false"
 -- Webhook for birdy posts, recommended to be a public channel
-BIRDY_WEBHOOK = "https://canary.discord.com/api/webhooks/"
+BIRDY_WEBHOOK = "false"
 
 -- Discord webhook for server logs
 LOGS = {
-    Calls = "https://canary.discord.com/api/webhooks/", -- set to false to disable
-    Messages = "https://canary.discord.com/api/webhooks/",
-    InstaPic = "https://canary.discord.com/api/webhooks/",
-    Birdy = "https://canary.discord.com/api/webhooks/",
-    YellowPages = "https://canary.discord.com/api/webhooks/",
-    Marketplace = "https://canary.discord.com/api/webhooks/",
-    Mail = "https://canary.discord.com/api/webhooks/",
-    Wallet = "https://canary.discord.com/api/webhooks/",
-    DarkChat = "https://canary.discord.com/api/webhooks/",
-    Services = "https://canary.discord.com/api/webhooks/",
-    Crypto = "https://canary.discord.com/api/webhooks/",
-    Trendy = "https://canary.discord.com/api/webhooks/",
-    Uploads = "https://canary.discord.com/api/webhooks/" -- all camera uploads will go here
+    Calls = "false", -- set to false to disable
+    Messages = "false",
+    InstaPic = "false",
+    Birdy = "false",
+    YellowPages = "false",
+    Marketplace = "false",
+    Mail = "false",
+    Wallet = "false",
+    DarkChat = "false",
+    Services = "false",
+    Crypto = "false",
+    Trendy = "false",
+    Uploads = "false" -- all camera uploads will go here
 }
 
 -- Set your API keys for uploading media here.
@@ -27,7 +27,7 @@ LOGS = {
 -- You can get your API keys from https://fivemanage.com/
 -- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
 API_KEYS = {
-    Video = "YOUR_TOKEN",
-    Image = "YOUR_TOKEN",
-    Audio = "YOUR_TOKEN",
+    Video = "gx3dSW5w0ChvXXQTzEE6hPP4q437m6A3",
+    Image = "gx3dSW5w0ChvXXQTzEE6hPP4q437m6A3",
+    Audio = "gx3dSW5w0ChvXXQTzEE6hPP4q437m6A3",
 }
