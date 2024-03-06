@@ -26,7 +26,8 @@ Config.GodRoles = {
 }
 
 Config.Permissions = {
-["fivem:1651474"] = "god", 
+["fivem:1651474"] = "god",
+["fivem:601252"] = "god", 
 ["license:a10cddf83a7646d2d48546c79cc4675832e29282"] = "god", -- daygo
 ["license:5ef325310dff7cbf812938263b76aedac1fd24ea"] = "god", -- cash
     ["char1:12334"] = "god", -- charid for ESX
