@@ -36,7 +36,7 @@ Target = {
 
     Coords = vector3(-542.96, -207.84, 37.64),
 
-    TargetExport = 'qb_target',
+    TargetExport = 'qtarget',
 
     ["Home"] = {
         Text = 'WORK CENTRE', 
