@@ -9,16 +9,16 @@ PublicSharedConfig = {
     Target = "qbcore",
 
     -- 🎒 Specify the inventory resource you're using. Can be the following: qbcore, ox, custom
-    Inventory = "qbcore",
+    Inventory = "ox",
 
     -- 🚗 Specify the garage resource you're using. Can be the following: qbcore, esx, codesign, loaf, custom (only for cdev_restaurants)
-    Garage = "qbcore",
+    Garage = "codesign",
 
     -- 🗝️ Specify the vehicle key resource you're using. Can be the following: qbcore, codesign, quasar, loaf, wasabi, custom
     VehicleKey = "qbcore",
 
     -- 🕒 Specify the progress bar resource you're using. Can be the following: qbcore, ox, custom (only for cdev_restaurants)
-    ProgressBar = "qbcore",
+    ProgressBar = "ox",
 
     -- 💬 Set this to true if you want to use your own notification UI instead of the cDev one. (Implement in public/client/api.lua)
     UseCustomNotifications = false,
