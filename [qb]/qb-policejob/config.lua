@@ -126,12 +126,12 @@ Config.CarItems = {
 Config.AuthorizedVehicles = {
     -- Grade 0 and higher
     [0] = {
-        ['tr_pdchar'] = 'Charger 18',
-        ['tr_pdchar2'] = 'Charger 14',
-        ['tr_pdvic'] = '11 Victoria',
-        ['tr_pdtaurus'] = '18 Taurus',
-        ['tr_pdexp'] = '22 Explorer',
-        ['tr_pdsilv'] = '22 Silverado',
+        ['tr_pdchar_v2'] = 'Charger 18',
+        ['tr_pdchar2_v2'] = 'Charger 14',
+        ['tr_pdvic_v2'] = '11 Victoria',
+        ['tr_pdtaurus_v2'] = '18 Taurus',
+        ['tr_pdexp_v2'] = '22 Explorer',
+        ['tr_pdsilv_v2'] = '22 Silverado',
     },
 }
 
