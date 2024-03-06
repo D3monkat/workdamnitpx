@@ -3061,4 +3061,489 @@ return {
 			image = "barrel_attachment.png",
 		}
 	},
+
+	["prisonchemicals"] = {
+		label = "Chemicals",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "Some random chemicals",
+		client = {
+			image = "prisonchemicals.png",
+		}
+	},
+
+	["codeine"] = {
+		label = "Codeine",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["green_gelato_cannabis"] = {
+		label = "Green Gelato Cannabis",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["pseudoefedrine"] = {
+		label = "Pseudoefedrine",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["prisonsugar"] = {
+		label = "Sugar Pack",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "Plain old sugar",
+		client = {
+			image = "prisonsugar.png",
+		}
+	},
+
+	["cayo_coke3"] = {
+		label = "Coke Brick",
+		weight = 12000,
+		stack = true,
+		close = true,
+		description = "Coke brick from Cayo Perico...",
+		client = {
+			image = "cayo_coke3.png",
+		}
+	},
+
+	["prisonfarmnutrition"] = {
+		label = "Plant Nutrition",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "Plant nutrition with a Bolingbroke Penitentiary label",
+		client = {
+			image = "prisonfarmnutrition.png",
+		}
+	},
+
+	["drug_meth"] = {
+		label = "Meth",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["opium"] = {
+		label = "Opium",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["nitrogen"] = {
+		label = "Nitrogen",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["cayo_deliverynote"] = {
+		label = "Delivery Note",
+		weight = 1000,
+		stack = false,
+		close = false,
+		description = "",
+		client = {
+			image = "cayo_deliverynote.png",
+		}
+	},
+
+	["cannabis"] = {
+		label = "Cannabis",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["tree_lumber"] = {
+		label = "Lumber",
+		weight = 50,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "lumber.png",
+		}
+	},
+
+	["prisonfruit"] = {
+		label = "Fruit Mix",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "A mix of random fruits",
+		client = {
+			image = "prisonfruit.png",
+		}
+	},
+
+	["cayo_coke1"] = {
+		label = "Coca Leaves",
+		weight = 2000,
+		stack = true,
+		close = false,
+		description = "Coca leaves...",
+		client = {
+			image = "cayo_coke1.png",
+		}
+	},
+
+	["prisonwateringcan"] = {
+		label = "Watering Can",
+		weight = 1000,
+		stack = false,
+		close = false,
+		description = "Watering can with a Bolingbroke Penitentiary label.",
+		client = {
+			image = "prisonwateringcan.png",
+		}
+	},
+
+	["prisonjuice"] = {
+		label = "Orange Juice",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "Regular Orange Juice",
+		client = {
+			image = "prisonjuice.png",
+		}
+	},
+
+	["empty_plastic_bag"] = {
+		label = "Empty Ziploc baggies",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "A small and empty plastic bag.",
+		client = {
+			image = "empty-plastic-bag.png",
+		}
+	},
+
+	["drug_lean"] = {
+		label = "Lean",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["oxygen"] = {
+		label = "Oxygen",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["prisonslushie"] = {
+		label = "Slushie",
+		weight = 1000,
+		stack = true,
+		close = true,
+		description = "Slushie",
+		client = {
+			image = "prisonslushie.png",
+		}
+	},
+
+	["prisonrock"] = {
+		label = "Coarse Rock",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "A very big coarse rock",
+		client = {
+			image = "prisonrock.png",
+		}
+	},
+
+	["muriatic_acid"] = {
+		label = "Muriatic Acid",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["prisonspoon"] = {
+		label = "Spoon",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "Cafeteria spoon",
+		client = {
+			image = "prisonspoon.png",
+		}
+	},
+
+	["red_sulfur"] = {
+		label = "Red Sulfur",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["prisonbag"] = {
+		label = "Plastic Bag",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "A plastic bag",
+		client = {
+			image = "prisonbag.png",
+		}
+	},
+
+	["prisonmeth"] = {
+		label = "Crank",
+		weight = 1000,
+		stack = true,
+		close = true,
+		description = "Prison made meth of low quality.",
+		client = {
+			image = "prisonmeth.png",
+		}
+	},
+
+	["jolly_ranchers"] = {
+		label = "Jolly Ranchers",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["hydrogen"] = {
+		label = "Hydrogen",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["cayo_weed3"] = {
+		label = "Weed Brick",
+		weight = 12000,
+		stack = true,
+		close = true,
+		description = "Weed brick from Cayo Perico...",
+		client = {
+			image = "cayo_weed3.png",
+		}
+	},
+
+	["ice"] = {
+		label = "Ice",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["drink_sprite"] = {
+		label = "Sprite",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["ammonium_nitrate"] = {
+		label = "Ammonium nitrate",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["prisonfarmseeds"] = {
+		label = "Plant Seeds",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "Seeds, water, nutrition and love make happy plants",
+		client = {
+			image = "prisonfarmseeds.png",
+		}
+	},
+
+	["prisonwine"] = {
+		label = "Pruno Mix",
+		weight = 1000,
+		stack = true,
+		close = false,
+		description = "You should ferment this to get a good buzz",
+		client = {
+			image = "prisonwine.png",
+		}
+	},
+
+	["tree_bark"] = {
+		label = "Tree Bark",
+		weight = 50,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "treebark.png",
+		}
+	},
+
+	["drug_lsd"] = {
+		label = "LSD",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["prisonwine_fermented"] = {
+		label = "Pruno",
+		weight = 1000,
+		stack = true,
+		close = true,
+		description = "This should give you a good buzz",
+		client = {
+			image = "prisonwine_fermented.png",
+		}
+	},
+
+	["sodium_hydroxide"] = {
+		label = "Sodium hydroxide",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["liquid_sulfur"] = {
+		label = "Liquid Sulfur",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["cayo_coke2"] = {
+		label = "Cocaine",
+		weight = 1500,
+		stack = true,
+		close = false,
+		description = "Cocaine Hydrochloride...",
+		client = {
+			image = "cayo_coke2.png",
+		}
+	},
+
+	["cayo_weed2"] = {
+		label = "Weed Buds",
+		weight = 1500,
+		stack = true,
+		close = false,
+		description = "Weed buds...",
+		client = {
+			image = "cayo_weed2.png",
+		}
+	},
+
+	["cocaine"] = {
+		label = "Cocaine",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["drug_ecstasy"] = {
+		label = "Ecstasy",
+		weight = 500,
+		stack = true,
+		close = false,
+		client = {
+			image = "your_image.png",
+		}
+	},
+
+	["wood_plank"] = {
+		label = "Wood Plank",
+		weight = 50,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "woodplank.png",
+		}
+	},
+
+	["cayo_weed1"] = {
+		label = "Weed Branch",
+		weight = 2000,
+		stack = true,
+		close = false,
+		description = "Fresh weed...",
+		client = {
+			image = "cayo_weed1.png",
+		}
+	},
 }
