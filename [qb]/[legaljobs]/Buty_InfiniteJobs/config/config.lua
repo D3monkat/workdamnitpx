@@ -6,10 +6,10 @@ Configuration = {
 
     Mysql = 'oxmysql',  -- oxmysql, mysql-async or ghmattisql
 
-    UseKeys = false,
-    UseFuel = false,
+    UseKeys = true,
+    UseFuel = true,
     UseDeleteVehicle = false,
-    UseWorkUniforms = true,
+    UseWorkUniforms = false,
     UseQuasarInventory = false,
     
     NPC = {
