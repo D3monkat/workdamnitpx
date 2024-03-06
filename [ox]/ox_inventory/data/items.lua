@@ -1,4 +1,111 @@
 return {
+	['fishingrod'] = {
+		label = 'Fishing Rod',
+	},
+	['fishingrod2'] = {
+		label = 'Fishing Rod',
+	},
+	['fishingrod3'] = {
+		label = 'Fishing Rod',
+	},
+	['fishinglure'] = {
+		label = 'Fishing Lure',
+		uses = 1000,
+	},
+	['fishinglure2'] = {
+		label = 'Fishing Lure',
+		uses = 1500,
+	},
+	['skill-reel'] = {
+		label = 'Skilled Reel',
+	},
+	['pro-reel'] = {
+		label = 'Pro Reel',
+	},
+	['fishingbait'] = {
+		label = 'Fishing Bait',
+	},
+	['killerwhalemeat'] = {
+		label = 'Killer whale',
+	},
+	['stingraymeat'] = {
+		label = 'Stingray Meat',
+	},
+	['tigershark'] = {
+		label = 'Tiger Shark',
+	},
+	['catfish'] = {
+		label = 'Catfish',
+	},
+	['fish'] = {
+		label = 'Fish',
+	},
+	['salmon'] = {
+		label = 'Salmon',
+	},
+	['largemouthbass'] = {
+		label = 'Largemouth Bass',
+	},
+	['goldfish'] = {
+		label = 'Goldfish',
+	},
+	['redfish'] = {
+		label = 'Redfish',
+	},
+	['bluefish'] = {
+		label = 'Bluefish',
+	},
+	['stripedbass'] = {
+		label = 'Striped Bass',
+	},
+	['rainbow-trout'] = {
+		label = 'Rainbow Trout',
+	},
+	['gholfish'] = {
+		label = 'Gholfish',
+	},
+	['codfish'] = {
+		label = 'Codfish',
+	},
+	['eelfish'] = {
+		label = 'Eelfish',
+	},
+	['swordfish'] = {
+		label = 'Swordfish',
+	},
+	['tuna-fish'] = {
+		label = 'Tunafish',
+	},
+	['chestkey'] = {
+		label = 'Chest Key',
+	},
+	['treasurechest'] = {
+		label = 'Treasure Chest',
+	},
+	['bottlemap'] = {
+		label = 'Bottle',
+	},
+	['treasuremap'] = {
+		label = 'Treasure Map',
+	},
+	['diamond'] = {
+		label = 'Diamond',
+	},
+	['emerald'] = {
+		label = 'Emerald',
+	},
+	['sapphire'] = {
+		label = 'Sapphire',
+	},
+	['ruby'] = {
+		label = 'Ruby',
+	},
+	['yellow-diamond'] = {
+		label = 'Yellow Diamond',
+	},
+	['captainskull'] = {
+		label = 'Captain Skull',
+	},
 	['gold'] = {
 		label = 'Gold',
 		weight = 160,
