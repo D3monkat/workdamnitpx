@@ -36,7 +36,18 @@ function progress()
     if Configuration.framework == 'esx' then
         exports['BCall_progress']:muestra(4020, 'Preparing...')
     else
-        exports['BCall_progress']:muestra(4020, 'Changing clothes…')
+        -- exports['BCall_progress']:muestra(4020, 'Changing clothes…')
+        QBCore.Functions.Progressbar("random_task", "Changing Clothes", 5000, false, true, {
+            disableMovement = false,
+            disableCarMovement = false,
+            disableMouse = false,
+            disableCombat = true,
+         }, {}, {}, {}, function()
+            -- Done
+            print('done')
+         end, function()
+            -- Cancel
+         end)
     end
 end
 
