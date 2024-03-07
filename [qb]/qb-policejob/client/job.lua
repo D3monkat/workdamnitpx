@@ -704,7 +704,7 @@ exports['qb-target']:AddTargetBone(bones, {
         end,
         canInteract = function(entity)
             local vehclass = GetVehicleClass(GetEntityModel(entity))
-            if vehclass ~= 18 and (PlayerJob.name ~= "police" or PlayerJob.name ~= "bcso" PlayerJob.name ~= "sasp" or or PlayerJob.type ~= "leo") then return end
+            if vehclass ~= 18 and (PlayerJob.name ~= "police" or PlayerJob.name ~= "bcso" PlayerJob.name ~= "sasp" or PlayerJob.type ~= "leo") then return end
             return true
         end,
         }
