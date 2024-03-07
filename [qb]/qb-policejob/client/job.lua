@@ -136,7 +136,8 @@ function TakeOutImpound(vehicle)
 end
 
 function TakeOutVehicle(vehicleInfo)
-    local coords = Config.Locations['vehicle'][currentGarage]
+    local coords = Config.Locations['vehicle'][currentGarage]    
+    local PlayerData = QBCore.Functions.GetPlayerData()
     if coords then
         QBCore.Functions.TriggerCallback('QBCore:Server:SpawnVehicle', function(netId)
             local veh = NetToVeh(netId)
