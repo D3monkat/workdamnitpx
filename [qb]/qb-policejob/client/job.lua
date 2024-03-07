@@ -163,13 +163,15 @@ function TakeOutVehicle(vehicleInfo)
     end
 end
 
-function setcallsignoncar()
+function setcallsignoncar()    
+    local vehicle
     local PlayerData = QBCore.Functions.GetPlayerData()
     local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'            
     local callsign1 = tonumber(string.sub(callsign, 1, 1))
     local callsign2 = tonumber(string.sub(callsign, 2, 2))
     local callsign3 = tonumber(string.sub(callsign, 3, 3))
-    -- Wait(100)            
+    -- Wait(100)
+    vehicle = GetVehiclePedIsIn(playerPed, false)
     SetVehicleMod(vehicle, 42, callsign1, false)
     SetVehicleMod(vehicle, 44, callsign2, false)
     SetVehicleMod(vehicle, 45, callsign3, false)
