@@ -164,17 +164,35 @@ function TakeOutVehicle(vehicleInfo)
 end
 
 function setcallsignoncar()    
-    local vehicle
-    local PlayerData = QBCore.Functions.GetPlayerData()
-    local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'            
-    local callsign1 = tonumber(string.sub(callsign, 1, 1))
-    local callsign2 = tonumber(string.sub(callsign, 2, 2))
-    local callsign3 = tonumber(string.sub(callsign, 3, 3))
-    -- Wait(100)
-    vehicle = GetVehiclePedIsIn(playerPed, false)
-    SetVehicleMod(vehicle, 42, callsign1, false)
-    SetVehicleMod(vehicle, 44, callsign2, false)
-    SetVehicleMod(vehicle, 45, callsign3, false)
+    QBCore.Functions.GetPlayerData(function(PlayerData)
+        if PlayerData.job.type == "leo" then
+            local playerPed = PlayerPedId()
+            local vehicle
+
+            local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
+
+            if Config.UseQBTarget == true then
+                vehicle = QBCore.Functions.GetClosestVehicle()
+            else
+                vehicle = GetVehiclePedIsIn(playerPed, false)
+            end
+
+            if #callsign == 3 then
+                local callsign1 = tonumber(string.sub(callsign, 1, 1))
+                local callsign2 = tonumber(string.sub(callsign, 2, 2))
+                local callsign3 = tonumber(string.sub(callsign, 3, 3))
+
+                SetVehicleModKit(vehicle, 0)
+                SetVehicleMod(vehicle, 42, callsign1, false)
+                SetVehicleMod(vehicle, 44, callsign2, false)
+                SetVehicleMod(vehicle, 45, callsign3, false)
+            else
+                QBCore.Functions.Notify('Your callsign must be 3 digits long!', 'error', 7000)
+            end
+        else
+            QBCore.Functions.Notify('You are not allowed to use this command!', 'error', 7000)
+        end
+    end)
 end
 
 
