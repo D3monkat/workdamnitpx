@@ -137,7 +137,6 @@ end
 
 function TakeOutVehicle(vehicleInfo)
     local coords = Config.Locations['vehicle'][currentGarage]    
-    local PlayerData = QBCore.Functions.GetPlayerData()
     if coords then
         QBCore.Functions.TriggerCallback('QBCore:Server:SpawnVehicle', function(netId)
             local veh = NetToVeh(netId)
@@ -145,10 +144,6 @@ function TakeOutVehicle(vehicleInfo)
             SetVehicleNumberPlateText(veh, Lang:t('info.police_plate') .. tostring(math.random(1000, 9999)))
             SetEntityHeading(veh, coords.w)
             exports[Config.FuelResource]:SetFuel(veh, 100.0)
-            local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'            
-            local callsign1 = tonumber(string.sub(callsign, 1, 1))
-            local callsign2 = tonumber(string.sub(callsign, 2, 2))
-            local callsign3 = tonumber(string.sub(callsign, 3, 3))
             closeMenuFull()
             if Config.VehicleSettings[vehicleInfo] ~= nil then
                 if Config.VehicleSettings[vehicleInfo].extras ~= nil then
@@ -161,14 +156,26 @@ function TakeOutVehicle(vehicleInfo)
             TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
             TriggerEvent('vehiclekeys:client:SetOwner', QBCore.Functions.GetPlate(veh))
             TriggerServerEvent('inventory:server:addTrunkItems', QBCore.Functions.GetPlate(veh), Config.CarItems)            
-            SetVehicleMod(vehicle, 42, callsign1, false)
-            SetVehicleMod(vehicle, 44, callsign2, false)
-            SetVehicleMod(vehicle, 45, callsign3, false)
+            setcallsignoncar()
             -- SetVehicleMod(vehicle, )
             SetVehicleEngineOn(veh, true, true)
         end, vehicleInfo, coords, true)
     end
 end
+
+function setcallsignoncar()
+    local PlayerData = QBCore.Functions.GetPlayerData()
+    local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'            
+    local callsign1 = tonumber(string.sub(callsign, 1, 1))
+    local callsign2 = tonumber(string.sub(callsign, 2, 2))
+    local callsign3 = tonumber(string.sub(callsign, 3, 3))
+    wait(100)            
+    SetVehicleMod(vehicle, 42, callsign1, false)
+    SetVehicleMod(vehicle, 44, callsign2, false)
+    SetVehicleMod(vehicle, 45, callsign3, false)
+end
+
+
 
 function MenuGarage(currentSelection)
     local vehicleMenu = {
