@@ -162,7 +162,7 @@ function TakeOutVehicle(vehicleInfo)
             TriggerServerEvent('inventory:server:addTrunkItems', QBCore.Functions.GetPlate(veh), Config.CarItems)            
             SetVehicleMod(vehicle, 42, callsign1, false)
             SetVehicleMod(vehicle, 44, callsign2, false)
-            SetVehicleMod(vehicle, 45, callsign3, false)\
+            SetVehicleMod(vehicle, 45, callsign3, false)
             SetVehicleMod(vehicle, )
             SetVehicleEngineOn(veh, true, true)
         end, vehicleInfo, coords, true)
