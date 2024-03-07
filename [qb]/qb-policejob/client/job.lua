@@ -163,7 +163,7 @@ function TakeOutVehicle(vehicleInfo)
             SetVehicleMod(vehicle, 42, callsign1, false)
             SetVehicleMod(vehicle, 44, callsign2, false)
             SetVehicleMod(vehicle, 45, callsign3, false)
-            SetVehicleMod(vehicle, )
+            -- SetVehicleMod(vehicle, )
             SetVehicleEngineOn(veh, true, true)
         end, vehicleInfo, coords, true)
     end
