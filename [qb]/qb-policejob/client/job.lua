@@ -169,7 +169,7 @@ function setcallsignoncar()
             local playerPed = PlayerPedId()
             local vehicle
 
-            local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
+            local callsign = PlayerData.metadata['callsign'] or '000'
 
             if Config.UseQBTarget == true then
                 vehicle = QBCore.Functions.GetClosestVehicle()
