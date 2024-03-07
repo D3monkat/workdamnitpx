@@ -169,7 +169,7 @@ function setcallsignoncar()
             local playerPed = PlayerPedId()
             local vehicle
 
-            local callsign = PlayerData.metadata['callsign'] or 'NO CALLSIGN'
+            local callsign = PlayerData.metadata['callsign'] or '000'
 
             if Config.UseQBTarget == true then
                 vehicle = QBCore.Functions.GetClosestVehicle()
@@ -183,8 +183,11 @@ function setcallsignoncar()
                 local callsign3 = tonumber(string.sub(callsign, 3, 3))
 
                 SetVehicleModKit(vehicle, 0)
+                Wait(100)
                 SetVehicleMod(vehicle, 42, callsign1, false)
+                Wait(100)
                 SetVehicleMod(vehicle, 44, callsign2, false)
+                Wait(100)
                 SetVehicleMod(vehicle, 45, callsign3, false)
             else
                 QBCore.Functions.Notify('Your callsign must be 3 digits long!', 'error', 7000)
