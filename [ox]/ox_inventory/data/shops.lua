@@ -1,6 +1,6 @@
 return {
 	General = {
-		name = 'Shop',
+		name = 'Shop', --- changed
 		blip = nil,
 		inventory = {
 			{ name = 'burger', price = 10 },
