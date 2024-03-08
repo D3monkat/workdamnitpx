@@ -176,7 +176,7 @@ function setcallsignoncar()
             else
                 vehicle = GetVehiclePedIsIn(playerPed, false)
             end
-
+            
             if #callsign == 3 then
                 local callsign1 = tonumber(string.sub(callsign, 1, 1))
                 local callsign2 = tonumber(string.sub(callsign, 2, 2))

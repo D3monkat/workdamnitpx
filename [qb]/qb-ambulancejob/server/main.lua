@@ -18,14 +18,36 @@ AddEventHandler('txAdmin:events:healedPlayer', function(eventData)
 	TriggerClientEvent('hospital:client:HealInjuries', eventData.id, 'full')
 end)
 
+-- RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive)
+-- 	local src = source
+-- 	local Player = QBCore.Functions.GetPlayer(src)
+-- 	TriggerClientEvent('hospital:client:SendToBed', src, bedId, Config.Locations['beds'][bedId], isRevive)
+-- 	TriggerClientEvent('hospital:client:SetBed', -1, bedId, true)
+-- 	Player.Functions.RemoveMoney('bank', Config.BillCost, 'respawned-at-hospital')
+-- 	exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment')
+-- 	TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
+-- end)
+
 RegisterNetEvent('hospital:server:SendToBed', function(bedId, isRevive)
 	local src = source
 	local Player = QBCore.Functions.GetPlayer(src)
-	TriggerClientEvent('hospital:client:SendToBed', src, bedId, Config.Locations['beds'][bedId], isRevive)
+	local player_plan = exports['osd-insurances']:GetPlayerPlan(src)
+	local player_membership = exports['osd-insurances']:GetPlayerMembership(src)
+	local bill_descount = 0
+	if player_plan == 'Health' then
+	   if player_membership == 'Plan Bronze' then
+		bill_descount = math.random(250, 500)
+	    elseif player_membership == 'Plan Gold' then
+		bill_descount = math.random(750, 900)
+	    elseif player_membership == 'Plan Diamond' then
+		bill_descount = math.random(1250, 1500)
+	    end
+	end
+	TriggerClientEvent('hospital:client:SendToBed', src, bedId, Config.Locations["beds"][bedId], isRevive)
 	TriggerClientEvent('hospital:client:SetBed', -1, bedId, true)
-	Player.Functions.RemoveMoney('bank', Config.BillCost, 'respawned-at-hospital')
-	exports['qb-banking']:AddMoney('ambulance', Config.BillCost, 'Player treatment')
-	TriggerClientEvent('hospital:client:SendBillEmail', src, Config.BillCost)
+	Player.Functions.RemoveMoney("bank", (Config.BillCost - bill_descount) , "respawned-at-hospital")
+	exports['qb-management']:AddMoney("ambulance", Config.BillCost)
+	TriggerClientEvent('hospital:client:SendBillEmail', src, (Config.BillCost - bill_descount))
 end)
 
 RegisterNetEvent('hospital:server:RespawnAtHospital', function()
