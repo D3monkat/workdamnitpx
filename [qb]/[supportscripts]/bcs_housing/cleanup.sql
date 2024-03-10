@@ -1,0 +1,1 @@
+DELETE FROM house_owned WHERE NOT EXISTS (SELECT NULL FROM house WHERE house_owned.identifier = house.identifier);

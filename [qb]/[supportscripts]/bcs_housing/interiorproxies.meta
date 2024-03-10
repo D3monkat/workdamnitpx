@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SInteriorOrderData>
+  <startFrom value="3000" />
+  <proxies>
+	<Item>shellmap</Item>
+	<Item>shellmapv2</Item>
+	<Item>shellmapv3</Item>
+	<Item>shellmapv4</Item>
+	<Item>shellmapv5</Item>
+	<Item>shellmapv7</Item>
+	<Item>shellmapv8</Item>
+	<Item>shellmapv9</Item>
+	<Item>shellmapv10</Item>
+	<Item>white_shell_milo_</Item>
+  </proxies>
+</SInteriorOrderData>
