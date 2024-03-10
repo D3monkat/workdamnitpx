@@ -33,6 +33,6 @@ Config.Clothing = {
 }
 
 Config.Housing = { --New
-    ['ps-housing'] = true, --https://github.com/Project-Sloth/ps-housing
-    ['qb-houses'] = false,
+    ['ps-housing'] = false, --https://github.com/Project-Sloth/ps-housing
+    ['qb-houses'] = true,
 }

@@ -52,12 +52,12 @@ QB.Spawns = {
 }
 
 QB.SpawnAccess = { --To disable the buttons
-    ['apartments'] = false,
-    ['houses'] = false,
+    ['apartments'] = true,
+    ['houses'] = true,
     ['lastLoc'] = true,
 }
 
 QB.Housing = { --New
     ['ps-housing'] = false, --https://github.com/Project-Sloth/ps-housing
-    ['qb-houses'] = false,
+    ['qb-houses'] = true,
 }
