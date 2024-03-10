@@ -1151,6 +1151,10 @@
 			<fileType>WORLD_WATERHEIGHT_FILE</fileType>
 		</Item>
 		<Item>
+			  <filename>resources:/cfx-nteam-river/heightmap.dat</filename>
+	  <fileType>WORLD_HEIGHTMAP_FILE</fileType>
+	  </Item>
+		<Item>
 			<filename>platform:/levels/gta5/props/vegetation/v_prop_patch.ityp</filename>
 			<fileType>PERMANENT_ITYP_FILE</fileType>
 			<contents>CONTENTS_PROPS</contents>
