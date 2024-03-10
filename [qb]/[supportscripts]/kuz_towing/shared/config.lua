@@ -22,7 +22,7 @@ Config.ropeLength = 7
 Config.ropeSyncDuration = 10
 
 -- Max speed (in MPH) of vehicles which are towing or being towed (set to -1 to disable speed limiting)
-Config.maxTowingSpeed = 50
+Config.maxTowingSpeed = 999
 
 -- Whether we should disallow players from attaching ropes to locked vehicles
 -- (For example. To prevent them from stealing vehicles of other players)
@@ -35,14 +35,14 @@ Config.towRopeItem = 'towing_rope'
 ---------- ESX Only Settings -----------
 -- If your server is running on ESX you can enable it to use the towing rope item
 -- You need to add the rope item to your database yourself !
-Config.useEsx = true
+Config.useEsx = false
 -- Whether or not to use the new ESX export method
-Config.useNewESXExport = true
+Config.useNewESXExport = false
 ----------------------------------------
 
 ---------- QB Only Settings ------------
 -- If your server is running on ESX you can enable it to use the towing rope item
-Config.useQB = false
+Config.useQB = true
 ----------------------------------------
 
 -- Classes of which vehicles may not be towed or tow another vehicle
