@@ -7,7 +7,7 @@ version '1.0.9'
 
 shared_scripts {
 	'config.lua',
-	-- '@qb-apartments/config.lua' -- If you use ps-housing, comment this line
+	'@qb-apartments/config.lua' -- If you use ps-housing, comment this line
     -- '@ps-housing/shared/config.lua' -- If you use qb-houses, comment this line
 }
 
