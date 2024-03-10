@@ -90,7 +90,7 @@ Config.Opacity = 100
 
 Config.Header = {
     -- LEFT MENU CONFIG
-    ["TITLE"] = "Pursuit-X",
+    ["TITLE"] = "Boston RP",
     ["SUBTITLE"] = "",
 
     ["MAP"] = "Map",
@@ -105,9 +105,9 @@ Config.Header = {
     ["EDITOR"] = "Rockstar Editor",
 
     -- RIGHT MENU CONFIG
-    ["SERVER_NAME"] = "Pursuit-X",
+    ["SERVER_NAME"] = "Boston RP",
     ["SERVER_TEXT"] = "Join the discord!",
-    ["SERVER_DISCORD"] = "https://discord.gg/rFQyJ4G5TT"
+    ["SERVER_DISCORD"] = "https://discord.gg/bostonrp"
 }
 
 --Allows you to Change the Colour ( Use this Website: https://rgbacolorpicker.com/ )

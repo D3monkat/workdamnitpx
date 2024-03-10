@@ -3,9 +3,9 @@ Config = {}
 --- Settings related to other script configurations
 Config.Resource             = GetCurrentResourceName()
 Config.Notify               = 'qb' -- 'ox' for ox_lib or 'qb' for QBCore.Functions.Notify
-Config.Phone                = 'lb-phone' -- 'QBCore' or 'GKS' or 'Qs' or 'lb-phone' or edit utils files for others
+Config.Phone                = 'QBCore' -- 'QBCore' or 'GKS' or 'Qs' or 'lb-phone' or edit utils files for others
 Config.Inventory            = 'ox_inventory' -- 'ox_inventory' or 'qb'
-Config.Doorlock             = 'ox' -- 'ox' or 'qb'
+Config.Doorlock             = 'qb' -- 'ox' or 'qb'
 Config.Logs                 = 'qb' -- 'ox' or 'qb'
 
 --- Script related settings
