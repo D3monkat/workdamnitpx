@@ -1,0 +1,506 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+		<!-- jQuery -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+		
+		<!-- Bootstrap -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+		<link id="css-bs-light" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" disabled>
+		<link id="css-bs-dark" rel="stylesheet" href="css/bootstrap-night.css">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="css/style.css">
+		<link id="css-light" rel="stylesheet" href="css/light-style.css" disabled>
+		<link id="css-dark" rel="stylesheet" href="css/dark-style.css">
+
+		<!-- Font Awesome 6 -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+		<!-- Select2 Library -->
+		<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+		<!-- Utils JavaScript -->
+		<script src="https://cfx-nui-lc_utils/nui/index.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<h1 style="color: #ffffff00;position: absolute;">_</h1>
+		<div class="main backgound-theme" style="display: none;">
+			<nav class="sidebar-navigation">
+				<ul id="nav-bar">
+					<li id="sidebar-main" onclick="openPage('main')">
+						<i class="fas fa-store-alt"></i>
+						<span id="span-main-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-goods" onclick="openPage('goods')">
+						<i class="fas fa-gas-pump"></i>
+						<span id="span-goods-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-jobs" onclick="openPage('jobs')">
+						<i class="fas fa-truck"></i>
+						<span id="span-jobs-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-hire" onclick="openPage('hire')">
+						<i class="fas fa-users"></i>
+						<span id="span-hire-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-employee" onclick="openPage('employee')">
+						<i class="fas fa-user-tie"></i>
+						<span id="span-employee-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-upgrades" onclick="openPage('upgrades')">
+						<i class="fas fa-chart-line"></i>
+						<span id="span-upgrades-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-bank" onclick="openPage('bank')">
+						<i class="fas fa-cash-register"></i>
+						<span id="span-bank-page" class="tooltip"></span>
+					</li>
+					<li id="sidebar-sell" href="#myModal" data-toggle="modal" >
+						<i class="fas fa-times"></i>
+						<span id="span-sell-page" class="tooltip"></span>
+					</li>
+				</ul>
+			</nav>
+			<div class="container-pages" style="position: relative;">
+				<div id="spinner" style="display: none; border-radius: 0px 20px 20px 0px;" class="spinner-container-modal"><svg class="spinner" viewBox="0 0 50 50"><circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle></svg></div>
+				
+				<div class="d-flex player-info-container">
+					<div class="d-flex mr-4">
+						<i class="fas fa-fire-flame-simple mr-1 text-primary player-info-item"></i>
+						<h4 id="player-info-stock" class="ml-1 m-0 player-info-item"></h4>
+					</div>
+					<div id="player-info-money-container" class="d-flex mr-4">
+						<i class="fas fa-coins mr-1 text-primary player-info-item"></i>
+						<h4 id="player-info-money" class="m-0 player-info-item"></h4>
+					</div>
+					<div class="custom-control custom-switch" style="z-index: 0;">
+						<input type="checkbox" class="custom-control-input" id="css-toggle" checked="">
+						<label class="custom-control-label" for="css-toggle"></label>
+						<i id="dark-theme-icon" class="fas fa-moon mr-1 text-primary player-info-item" for="css-toggle" style="display: none;"></i>
+						<i id="light-theme-icon" class="fas fa-sun mr-1 text-primary player-info-item" for="css-toggle"></i>
+					</div>
+				</div>
+
+				<div class="pages main-page" style="height: 100%; overflow: auto;">
+					<div id="rename-business-container">
+						<div class="col-md-12 mt-3 mb-3">
+							<h4 id="store-name" class="text-uppercase"></h4>
+							<p id="store-name-desc"></p>
+						</div>
+						<form id="rename-form" role="form">
+							<div class="controls">
+								<div class="row">
+									<div id="text-rename" class="col-6">
+										
+									</div>
+									<!-- Blips and colors ID from there: https://docs.fivem.net/docs/game-references/blips/ -->
+									<div class="col-2">
+										<select id="form_blip_color" name="color" class="form-control" required="required">
+											
+										</select>
+									</div>
+									<div class="col-2">
+										<select id="form_blip_id" name="type" class="form-control" required="required">
+											
+										</select>
+									</div>
+									
+									<div class="col-2"> 
+										<button class="btn btn-primary btn-block" id="apply-rename">Aplicar</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					
+					<div class="col-12 mt-3 mb-3">
+						<h4 id="main-page-title" class="text-uppercase"></h4>
+						<p id="main-page-desc"></p>
+					</div>
+					<div>
+						<div class="row mb-3">
+							<div class="col-6">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-money-earned" class="text-success">$0.00</h3>
+													<span id="profile-money-earned-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-money-check-alt text-success font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-money-spent" class="text-success">$0.00</h3>
+													<span id="profile-money-spent-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-money-check text-success font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-4">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-goods" class="text-info">0</h3>
+													<span id="profile-goods-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-truck-loading text-info font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-goods-sold" class="text-info">0km</h3>
+													<span id="profile-goods-sold-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-money-check-dollar text-info font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-distance-traveled" class="text-info">0km</h3>
+													<span id="profile-distance-traveled-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-route text-info font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-6">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-total-visits" class="text-danger">0</h3>
+													<span id="profile-total-visits-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-map-marker-alt text-danger font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="card card-centering">
+									<div class="card-content">
+										<div class="card-body">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-customers" class="text-danger">0</h3>
+													<span id="profile-customers-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-users text-danger font-large-2 float-right"></i>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-12">
+								<div class="card overflow-hidden card-centering">
+									<div class="card-content">
+										<div class="card-body cleartfix">
+											<div class="media d-flex">
+												<div class="media-body text-left">
+													<h3 id="profile-stock-1" class="amber accent-4"></h3>
+													<span id="profile-stock-2"></span>
+												</div>
+												<div class="align-self-center">
+													<i class="fas fa-gas-pump amber accent-4 font-large-2 float-right"></i>
+												</div>
+											</div>
+											<div id="profile-stock-3" class="progress mt-1 mb-0" style="height: 7px;">
+												<div class="progress-bar bg-amber accent-4" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="pages goods-page">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="col-12 mt-3 mb-1">
+								<h4 id="goods-page-title" class="text-uppercase"></h4>
+								<p id="goods-page-desc"></p>
+							</div>
+							<div class="mt-3">
+								<div id="fuel-page" class="d-flex">
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pages jobs-page overflow-hidden">
+					<div class="col-12 mt-3 mb-1">
+						<h4 id="jobs-page-title" class="text-uppercase"></h4>
+						<p id="jobs-page-desc" id="skills-desc"></p>
+					</div>
+					<ul id="job-page-list" class="list list-inline">
+						
+					</ul>
+				</div>
+
+				<div class="pages hire-page" style="height: 100%;">
+					<div class="row" style="height: 100%;">
+						<div class="col-md-12" style="height: 100%;">
+							<div id="hire-title-div" class="col-12 mt-3 mb-3">
+								<h4 id="hire-page-title" class="text-uppercase"></h4>
+								<p id="hire-page-desc"></p>
+								<form id="contact-form" role="form">
+									<div class="controls">
+										<div id="hire-page-form" class="row">
+
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="mt-3" style="max-height: calc(100% - var(--hire-title-height)); overflow: auto;">
+								<ul id="contracts-page-list" class="list list-inline">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pages employee-page" style="height: 100%;">
+					<div class="row" style="height: 100%;">
+						<div class="col-md-12" style="height: 100%;">
+							<div id="employee-title-div" class="col-12 mt-3 mb-3">
+								<h4 id="employees-title" class="text-uppercase"></h4>
+								<p id="employees-page-desc"></p>
+								<div class="d-flex align-items-center justify-content-center">
+									<select id="input-hire-player" class="form-control" name="select" style="width:auto;"></select>
+									<button id="button-hire-player" onclick="hirePlayer()" class="btn btn-primary ml-3"></button>
+								</div>
+							</div>
+							<div class="mt-3">
+								<ul id="hired-players-list" class="list list-inline" style="max-height: calc(100% - var(--employee-title-height)); overflow: auto;">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="pages upgrades-page overflow-hidden">
+					<div class="col-12 mt-3 mb-1">
+						<h4 id="upgrades-page-title" class="text-uppercase"></h4>
+						<p id="upgrades-page-desc"></p>
+					</div>
+
+					<div id="upgrades-page" class="row pb-5 mb-4">
+						
+					</div>
+				</div>
+
+				<div class="pages bank-page">
+					<div id="bank-title-div" class="col-12 mt-3 mb-3">
+						<h4 id="bank-page-title" class="text-uppercase"></h4>
+						<p id="bank-page-desc"></p>
+					</div>
+					<div style="max-height: calc(100% - var(--bank-title-height)); overflow: auto;">
+						<div class="d-flex">
+							<div class="card card-body mb-4">
+								<div class="d-flex justify-content-between mx-2 my-4">
+									<div>
+										<h6 id="bank-balance-text"></h6>
+										<div class="d-flex align-items-center mt-3">
+											<i class="fas fa-coins text-primary font-large-2" aria-hidden="true"></i>
+											<h3 id="bank-money" style="font-size: 48px;" class="bank-money-title mb-0 ml-4"></h3>
+										</div>
+									</div>
+									<div class="d-flex flex-column justify-content-between" style="min-width: 200px;">
+										<button data-toggle="modal" data-target="#deposit-modal" id="deposit-money-btn" class="btn btn-outline-primary"></button>
+										<button data-toggle="modal" data-target="#withdraw-modal" id="withdraw-money-btn" class="btn btn-primary"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="balance-table-container" class="card pb-2 pt-4 px-4 w-auto mb-3" style="display: none;">
+							<div class="d-flex align-items-center justify-content-between">
+								<h4 id="balance-table-title" class="bank-loan-title" style="font-weight: 600;"></h4>
+								<div>
+									<input id="show-hidden-balance" type="checkbox">
+									<label id="bank-page-show-hidden" for="show-hidden-balance" class="m-0"></label>
+								</div>
+							</div>
+							<div class="balance-table-container">
+								<table class="table mb-0">
+									<thead>
+										<tr>
+											<th id="balance-title"></th>
+											<th id="balance-value" style="width: 20%;"></th>
+											<th id="balance-date" style="width: 20%;"></th>
+											<th style="width: 20%;"></th>
+										</tr>
+									</thead>
+									<tbody id="balance-table-body">
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="myModal" class="modal fade" aria-hidden="true">
+			<div class="modal-dialog modal-confirm">
+				<div class="modal-content">
+					<div class="modal-header flex-column">
+						<div class="icon-box">
+							<i class="fas fa-exclamation"></i>
+						</div>						
+						<h4 id="modal-confirm-title-2" class="modal-title w-100"></h4>	
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<p id="modal-p-2"></p>
+					</div>
+					<div class="modal-footer justify-content-center">
+						<button id="modal-cancel-button-2" type="button" class="btn btn-secondary" data-dismiss="modal"></button>
+						<button id="modal-confirm-button-2" onclick="sellMarket()" type="button" data-dismiss="modal" class="btn btn-danger"></button>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+		<div id="buyModal" class="modal fade" aria-hidden="true">
+			<div class="modal-dialog modal-confirm">
+				<div class="modal-content">
+					<div class="modal-header flex-column">
+						<div class="icon-box">
+							<i class="fas fa-exclamation"></i>
+						</div>						
+						<h4 id="modal-confirm-title" class="modal-title w-100"></h4>	
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					</div>
+					<div class="modal-body">
+						<p id="modal-p"></p>
+					</div>
+					<div class="modal-footer justify-content-center">
+						<button id="modal-cancel-button" type="button" class="btn btn-secondary" data-dismiss="modal" ></button>
+						<button id="modal-confirm-button" onclick="buyMarket()" type="button" data-dismiss="modal" class="btn btn-danger"></button>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+		<div id="deposit-modal" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="deposit-modal-title"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form id="form-deposit-money" class="m-0">
+						<div class="modal-body">
+							<div class="form-group">
+								<label id="deposit-modal-desc" for="deposit-modal-money-amount"></label>
+								<input type="number" class="form-control mb-1 mt-2" id="deposit-modal-money-amount" placeholder="" name="amount" required>
+								<small id="deposit-modal-money-available" class="text-muted" style="font-size: 12px;"></small>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button id="deposit-modal-cancel" type="button" class="btn btn-outline-primary" data-dismiss="modal"></button>
+							<button id="deposit-modal-submit" type="submit" class="btn btn-primary"></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="withdraw-modal" class="modal fade">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="withdraw-modal-title"></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<form id="form-withdraw-money" style="margin: 0;">
+						<div class="modal-body">
+							<div class="form-group">
+								<label id="withdraw-modal-desc" for="withdraw-modal-money-amount"></label>
+								<input type="number" class="form-control mb-1 mt-2" id="withdraw-modal-money-amount" placeholder="" name="amount" required>
+								<small id="withdraw-modal-money-available" class="text-muted" style="font-size: 12px;"></small>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button id="withdraw-modal-cancel" type="button" class="btn btn-outline-primary" data-dismiss="modal"></button>
+							<button id="withdraw-modal-submit" type="submit" class="btn btn-primary"></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<script src="panel.js" type="text/javascript"></script>
+	</body>
+</html>

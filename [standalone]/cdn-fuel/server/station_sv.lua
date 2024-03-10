@@ -1,4 +1,4 @@
-if Config.PlayerOwnedGasStationsEnabled then -- This is so Player Owned Gas Stations are a Config Option, instead of forced. Set this option in shared/config.lua!
+if false then -- This is so Player Owned Gas Stations are a Config Option, instead of forced. Set this option in shared/config.lua!
     
     -- Variables
     local QBCore = exports[Config.Core]:GetCoreObject()
@@ -357,3 +357,57 @@ if Config.PlayerOwnedGasStationsEnabled then -- This is so Player Owned Gas Stat
     end)
 
 end -- For Config.PlayerOwnedGasStationsEnabled check, don't remove!\
+
+local QBCore = exports[Config.Core]:GetCoreObject()
+
+RegisterNetEvent('cdn-fuel:station:server:updatereserves', function(reason, amount, currentlevel, location)
+	if reason == "remove" then
+		NewLevel = (currentlevel - amount)
+	elseif reason == "add" then
+		NewLevel = (currentlevel + amount)
+	else
+		if Config.FuelDebug then print("Reason is not a valid string! It should be 'add' or 'remove'!") end
+	end
+	if Config.FuelDebug then print('Attempting to '..reason..' '..amount..' to / from Location #'..location.."'s Reserves!") end
+	MySQL.Async.execute('UPDATE gas_station_business SET stock = ? WHERE `gas_station_id` = ?', {NewLevel, location})
+	if Config.FuelDebug then print('Successfully executed the previous SQL Update!') end
+end)
+
+RegisterNetEvent('cdn-fuel:station:server:updatebalance', function(reason, amount, StationBalance, location, FuelPrice)
+	if Config.FuelDebug then print("Amount: "..amount) end
+	local Price = (FuelPrice * tonumber(amount))
+	local StationGetAmount = math.floor(Config.StationFuelSalePercentage * Price)
+	if reason == "remove" then
+		NewBalance = (StationBalance - StationGetAmount)
+	elseif reason == "add" then
+		NewBalance = (StationBalance + StationGetAmount)
+	else
+		if Config.FuelDebug then print("Reason is not a valid string! It should be 'add' or 'remove'!") end
+	end
+	if Config.FuelDebug then print('Attempting to '..reason..' '..StationGetAmount..' to / from Location #'..location.."'s Balance!") end
+	local sql = "UPDATE `gas_station_business` SET customers = customers + 1, money = money + @price, total_money_earned = total_money_earned + @price, gas_sold = gas_sold + @amount WHERE gas_station_id = @gas_station_id";
+	MySQL.Async.execute(sql, {['@gas_station_id'] = location, ['@price'] = StationGetAmount, ['@amount'] = amount});
+	if Config.FuelDebug then print('Successfully executed the previous SQL Update!') end
+
+	local sql = "INSERT INTO `gas_station_balance` (gas_station_id,income,title,amount,date) VALUES (@gas_station_id,@income,@title,@amount,@date)";
+	MySQL.Async.execute(sql, {['@gas_station_id'] = location, ['@income'] = 0, ['@title'] = "Fuel sold ("..amount.." Liters)", ['@amount'] = StationGetAmount, ['@date'] = os.time()});
+end)
+
+QBCore.Functions.CreateCallback('cdn-fuel:server:fetchinfo', function(source, cb, location)
+	local src = source
+	local Player = QBCore.Functions.GetPlayer(src)
+	if Config.FuelDebug then print("Fetching Information for Location: "..location) end
+	MySQL.Async.fetchAll('SELECT stock as fuel, price as fuelprice, money as balance FROM gas_station_business WHERE gas_station_id = ?', {location}, function(result)
+		if result and result[1] then
+			MySQL.Async.execute('UPDATE gas_station_business SET total_visits = total_visits + 1 WHERE `gas_station_id` = ?', {location})
+			cb(result)
+			if Config.FuelDebug then print(json.encode(result)) end
+		else
+			cb({{fuel = 1000, fuelprice = Config.CostMultiplier*100, balance = 0}}) -- Multiplies to 100 because after it divide to 100
+		end
+	end)
+end)
+
+QBCore.Functions.CreateCallback('cdn-fuel:server:checkshutoff', function(source, cb, location)
+	cb(false)
+end)

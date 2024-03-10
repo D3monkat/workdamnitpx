@@ -1,0 +1,48 @@
+.backgound-theme {
+	background-color: #f5f6f8;
+}
+
+.card-theme {
+    background: #fff;
+    border: 1px solid #e3dada;
+}
+
+.filter-card-theme {
+    background-color: #f0f0f0;
+}
+
+.card-featured-theme {
+    background: #ECEDF1
+}
+
+.user-card .card-block .activity-leval li {
+    background-color: #ccc;
+}
+
+.bank-money-title, .bank-loan-title {
+    color: #313443;
+}
+
+.sidebar-navigation {
+	background-color: #313443;
+}
+
+.sidebar-navigation ul li .tooltip {
+	background-color: #313443;
+}
+
+.vt-card {
+    background-color: #fff;
+    color: #000;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid #ced4da !important;
+    background-color: #fff !important;
+}
+
+.control-box {
+    background-color: #ebebeb;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .1),
+                -5px -5px 10px rgba(255, 255, 255, 1);
+}

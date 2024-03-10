@@ -51,13 +51,13 @@ Config.EmergencyServicesDiscount = {
 }
 Config.Core = 'qb-core' -- Change this to your core resources (Ex: 'qbx-core' | 'qb-core'), must be qb based!
 Config.Ox = {
-    Inventory = false, -- Uses OX_Inventory's metadata instead of QB-Inventory's.
-    Menu = false, -- Uses OX Libraries instead of qb-menu.
-    Input = false, -- Uses Ox Input Dialog instead of qb-input.
-    DrawText = false, -- Uses Ox DrawText instead of qb-core DrawText.
-    Progress = false -- Uses Ox ProgressBar instead of progressbar.
+    Inventory = true, -- Uses OX_Inventory's metadata instead of QB-Inventory's.
+    Menu = true, -- Uses OX Libraries instead of qb-menu.
+    Input = true, -- Uses Ox Input Dialog instead of qb-input.
+    DrawText = true, -- Uses Ox DrawText instead of qb-core DrawText.
+    Progress = true -- Uses Ox ProgressBar instead of progressbar.
 }
-Config.TargetResource = "qb-target" -- Supported: { 'qb-target', 'ox_target'} -- Others must use the same format as QB-Target or manual configuration is required.
+Config.TargetResource = "ox_target" -- Supported: { 'qb-target', 'ox_target'} -- Others must use the same format as QB-Target or manual configuration is required.
 Config.PumpHose = false -- If true, it creates a hose from the pump to the nozzle the client is holding, to give it a more realistic feel.
 Config.RopeType = { -- Options: 1-2-3-4-5; 1: Khaki Color, Kind of Thick, 2: Very Thick Khaki Rope, 3: Very Thick Black Rope, 4: Very Thin Black Rope, 5: Same as 3
     ['fuel'] = 1,
@@ -103,9 +103,13 @@ Config.RefuelAnimationDictionary = "timetable@gardener@filling_can" -- This is f
 --- Player Owned Gas (Gasoline) Ergonomic Refueling Stations (Poggers) ---
 Config.PlayerOwnedGasStationsEnabled = true -- When true, peds will be located at all gas stations, and players will be able to talk with peds & purchase gas stations, having to manage fuel supplies.
 Config.StationFuelSalePercentage = 0.65 -- % of sales that the station gets. If they sell 4 Liters of Gas for $16 (not including taxes), they will get 16*Config.StationFuelSalePercentage back from the sale. Treat this as tax, also, it balances the profit margins a bit.
-Config.EmergencyShutOff = false -- When true, players can walk up to the ped and shut off the pumps at a gas station. While false, this option is disabled, because it can obviously be an issue. 
 Config.UnlimitedFuel = false -- When true, the fuel stations will not require refuelling by gas station owners, this is for the early stages of implementation.
 Config.MaxFuelReserves = 100000 -- This is the maximum amount that the fuel station's reserves can hold.
+Config.WaitTime = 400 -- This is the wait time after callbacks, if you are having issues with menus not popping up, or being greyed out, up this to around ~300, it is not recommended to go over ~750, as menus will get slower and more unresponsive the higher you go. (Fixes this issue: https://www.shorturl.at/eqS19)
+
+
+-- THESE CONFIGS ARE DISABLED BY LC_GAS_STATIONS
+Config.EmergencyShutOff = false -- When true, players can walk up to the ped and shut off the pumps at a gas station. While false, this option is disabled, because it can obviously be an issue. 
 Config.FuelReservesPrice = 2.0 -- This is the price of fuel reserves for gas station owners.
 Config.GasStationSellPercentage = 50 -- This is the percentage that players will get of the gas stations price, when they sell a location!
 Config.MinimumFuelPrice = 2 -- This is the minimum value you want to let players set their fuel prices to.
@@ -114,8 +118,8 @@ Config.PlayerControlledFuelPrices = true -- This gives you the option to disable
 Config.GasStationNameChanges = true -- This gives you the option to disable people being able to change the name of their gas station, only recommended if it becomes a problem.
 Config.NameChangeMinChar = 10 -- This is the minimum length that a Gas Station's name must be.
 Config.NameChangeMaxChar = 25 -- This is the maximum length that a Gas Station's name must be.
-Config.WaitTime = 400 -- This is the wait time after callbacks, if you are having issues with menus not popping up, or being greyed out, up this to around ~300, it is not recommended to go over ~750, as menus will get slower and more unresponsive the higher you go. (Fixes this issue: https://www.shorturl.at/eqS19)
-Config.OneStationPerPerson = true -- This prevents players that already own one station from buying another, to prevent monopolies over Gas Stations.
+-- THESE CONFIGS ARE DISABLED BY LC_GAS_STATIONS
+
 
 --- Electric Vehicles
 Config.ElectricVehicleCharging = true -- When true, electric vehicles will actually consume resources and decrease 'Fuel / Battery' while driving. This means players will have to recharge their vehicle!
@@ -785,6 +789,7 @@ Config.AirAndWaterVehicleFueling = {
 
 Config.GasStations = { -- Configuration options for various gas station related things, including peds, coords and labels.
     [1] = {
+		lc_gasStation_id = "gas_station_7",
         zones = {
             vector2(176.89, -1538.26),
             vector2(151.52, -1560.98),
@@ -807,6 +812,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Davis Avenue Ron",
     },
     [2] = {
+		lc_gasStation_id = "gas_station_27",
         zones = {
             vector2(-53.03, -1737.50),
             vector2(-92.80, -1751.89),
@@ -830,6 +836,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Grove Street LTD",
     },
     [3] = {
+		lc_gasStation_id = "gas_station_26",
         zones = {
             vector2(-543.94, -1218.18),
             vector2(-533.71, -1191.67),
@@ -852,6 +859,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Dutch London Xero",
     },
     [4] = {
+		lc_gasStation_id = "gas_station_25",
         zones = { 
             vector2(-696.77, -948.94),
             vector2(-739.47, -951.07),
@@ -876,6 +884,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Little Seoul LTD",
     },
     [5] = {
+		lc_gasStation_id = "gas_station_1",
         zones = {
             vector2(243.18, -1281.82),
             vector2(243.94, -1228.41),
@@ -899,6 +908,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
 
     },
     [6] = {
+		lc_gasStation_id = "gas_station_2",
         zones = {
             vector2(798.48, -1017.05),
             vector2(801.89, -1061.74),
@@ -921,6 +931,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Popular Street Ron",
     },
     [7] = {
+		lc_gasStation_id = "gas_station_3",
         zones = {
             vector2(1212.12, -1381.44),
             vector2(1221.21, -1395.08),
@@ -945,6 +956,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Capital Blvd Ron",
     },
     [8] = {
+		lc_gasStation_id = "gas_station_4",
         zones = {
             vector2(1188.28, -306.38),
             vector2(1145.24, -314.19),
@@ -968,6 +980,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Mirror Park LTD",
     },
     [9] = {
+		lc_gasStation_id = "gas_station_5",
         zones = {
             vector2(650.76, 229.92),
             vector2(599.24, 256.44),
@@ -992,6 +1005,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Clinton Ave Globe Oil",
     },
     [10] = {
+		lc_gasStation_id = "gas_station_23",
         zones = {
             vector2(-1460.98, -276.89),
             vector2(-1419.32, -237.12),
@@ -1014,6 +1028,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "North Rockford Ron",
     },
     [11] = {
+		lc_gasStation_id = "gas_station_24",
         zones = {
             vector2(-2135.61, -327.27),
             vector2(-2134.85, -286.36),
@@ -1038,6 +1053,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Great Ocean Xero",
     },
     [12] = {
+		lc_gasStation_id = "gas_station_20",
         zones = {
             vector2(-91.5, 6431.47),
             vector2(-77.83, 6419.75),
@@ -1061,6 +1077,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Paleto Blvd Xero",
     },
     [13] = {
+		lc_gasStation_id = "gas_station_19",
         zones = {
             vector2(167.08, 6631.73),
             vector2(176.47, 6640.66),
@@ -1085,6 +1102,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Paleto Ron",
     },
     [14] = {
+		lc_gasStation_id = "gas_station_18",
         zones = {
             vector2(1684.5, 6413.73),
             vector2(1693.67, 6431.38),
@@ -1107,6 +1125,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Paleto Globe Oil",
     },
     [15] = {
+		lc_gasStation_id = "gas_station_17",
         zones = {
             vector2(1696.59, 4939.02),
             vector2(1723.48, 4920.08),
@@ -1131,6 +1150,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Grapeseed LTD",
     },
     [16] = {
+		lc_gasStation_id = "gas_station_16",
         zones = {
             vector2(1972.35, 3777.27),
             vector2(1989.02, 3748.11),
@@ -1154,6 +1174,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Sandy Shores Xero",
     },
     [17] = {
+		lc_gasStation_id = "gas_station_9",
         zones = {
             vector2(1774.24, 3308.71),
             vector2(1752.65, 3345.83),
@@ -1177,6 +1198,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Sandy Shores Globe Oil",
     },
     [18] = {
+		lc_gasStation_id = "gas_station_15",
         zones = {
             vector2(2671.21, 3290.53),
             vector2(2649.62, 3254.55),
@@ -1200,6 +1222,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Senora Freeway Xero",
     },
     [19] = {
+		lc_gasStation_id = "gas_station_13",
         zones = {
             vector2(1188.64, 2651.89),
             vector2(1202.27, 2663.64),
@@ -1225,6 +1248,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Harmony Globe Oil",
     },
     [20] = {
+		lc_gasStation_id = "gas_station_12",
         zones = {
             vector2(1026.14, 2669.70),
             vector2(1028.03, 2640.91),
@@ -1248,6 +1272,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Route 68 Globe Oil",
     },
     [21] = {
+		lc_gasStation_id = "gas_station_11",
         zones = {
             vector2(269.70, 2606.44),
             vector2(275.38, 2585.23),
@@ -1272,6 +1297,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Route 68 Workshop Globe Oil",
     },
     [22] = {
+		lc_gasStation_id = "gas_station_10",
         zones = {
             vector2(46.59, 2795.45),
             vector2(27.65, 2775.76),
@@ -1295,6 +1321,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Route 68 Xero",
     },
     [23] = {
+		lc_gasStation_id = "gas_station_21",
         zones = {
             vector2(-2562.12, 2340.53),
             vector2(-2560.98, 2299.62),
@@ -1318,6 +1345,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Route 68 Ron",
     },
     [24] = {
+		lc_gasStation_id = "gas_station_14",
         zones = {
             vector2(2545.08, 2601.14),
             vector2(2556.06, 2573.11),
@@ -1342,6 +1370,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Rex's Diner Globe Oil",
     },
     [25] = {
+		lc_gasStation_id = "gas_station_6",
         zones = {
             vector2(2540.15, 373.86),
             vector2(2538.26, 345.83),
@@ -1365,6 +1394,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "Palmino Freeway Ron",
     },
     [26] = {
+		lc_gasStation_id = "gas_station_22",
         zones = {
             vector2(-1820.41, 767.31),
             vector2(-1775.49, 802.95),
@@ -1387,6 +1417,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
         label = "North Rockford LTD",
     },
     [27] = {
+		lc_gasStation_id = "gas_station_8",
         zones = {
             vector2(-354.55, -1452.65),
             vector2(-354.17, -1499.62),
@@ -1410,6 +1441,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
     },
     --[[
     [28] = { -- Gabz Ottos Autos Location, Line In If Needed.
+		lc_gasStation_id = "",
         zones = {
             vector2(794.27795410156, -802.88677978516),
             vector2(794.19073486328, -784.70434570313),
@@ -1436,6 +1468,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
     ]]
     --[[
     [29] = { -- Car Meet Location, Line In If Needed.
+		lc_gasStation_id = "",
         zones = {
             vector2(968.98, -1754.89),
             vector2(962.97, -1754.32),
@@ -1460,6 +1493,7 @@ Config.GasStations = { -- Configuration options for various gas station related 
     ]]
     --[[ Example of a New Location
     [29] = {
+		lc_gasStation_id = "",
         zones = {
              https://skyrossm.github.io/PolyZoneCreator/
              Use this for a quick way to add a Gas Station, instead of doing it in game, make sure you included the entire area, including the ped and electric pumps if used.

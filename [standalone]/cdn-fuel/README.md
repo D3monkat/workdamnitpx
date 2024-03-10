@@ -76,7 +76,7 @@ Next, we're going to drag the sounds from the *cdn-fuel/assets/sounds* folder in
 
 ### Step 3:
 
-Next, we're going to open our entire resources folder in whichever IDE you use, (we will be using Visual Studio Code for this example) and replace all of your current exports titled "cdn-fuel", "ps-fuel" or "lj-fuel", with "cdn-fuel". Then you want to ensure cdn-fuel in your server's config file. 
+Next, we're going to open our entire resources folder in whichever IDE you use, (we will be using Visual Studio Code for this example) and replace all of your current exports titled "LegacyFuel", "ps-fuel" or "lj-fuel", with "cdn-fuel". Then you want to ensure cdn-fuel in your server's config file. 
 <br> <br>
 ![step 3](https://i.imgur.com/VZnQpcS.gif)
 
@@ -131,7 +131,7 @@ We will now be installing the Jerry Can & Syphoning Kit items into your server. 
 <br> <br>
 If you plan to not use them, you can skip this Step and Step 7!
 <br> <br>
-The first step of installing our items is to navigate to your *qb-core/shared/items.lua*.
+The first step off installing our items is to navigate to your *qb-core/shared/items.lua*.
 <br> <br>
 Once there, we will paste the following items at the bottom of our items table.
 ```Lua
