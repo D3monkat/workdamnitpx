@@ -3695,4 +3695,26 @@ return {
 			image = "cayo_weed1.png",
 		}
 	},
+
+	["jerrycan"] = {
+		label = "Jerry Can",
+		weight = 15000,
+		stack = false,
+		close = false,
+		description = "A Jerry Can made to hold gasoline.",
+		client = {
+			image = "jerrycan.png",
+		}
+	},
+
+	["syphoningkit"] = {
+		label = "Syphoning Kit",
+		weight = 5000,
+		stack = false,
+		close = false,
+		description = "A kit made to siphon gasoline from vehicles.",
+		client = {
+			image = "syphoningkit.png",
+		}
+	},
 }
