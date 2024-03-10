@@ -85,6 +85,7 @@ server_scripts {
 
 shared_scripts {
     "shared/*.lua",
+    '@ox_lib/init.lua',
 }
 
 escrow_ignore {
