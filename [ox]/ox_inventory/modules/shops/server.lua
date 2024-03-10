@@ -184,19 +184,6 @@ end
 lib.callback.register('ox_inventory:buyItem', function(source, data)
 	if data.toType == 'player' then
 		if data.count == nil then data.count = 1 end
-local message = locale('purchased_for', count, fromItem.label, (currency == 'money' and locale('$') or math.groupdigits(price)), (currency == 'money' and math.groupdigits(price) or ' '..Items(currency).label))
--- \\Existing code above for reference, put it right under it. \\
-
-if string.find(fromData.name, "WEAPON_") then
-					local serial = metadata.serial
-					local imageurl = ("https://cfx-nui-ox_inventory/web/images/%s.png"):format(fromData.name)
-					local notes = "Purchased from shop"
-					local owner = playerInv.owner
-					local weapClass = "Class"
-					local weapModel = fromData.name
-					
-					AddWeaponToMDT(serial, imageurl, notes, owner, weapClass, weapModel)
-				end
 
 		local playerInv = Inventory(source)
 
@@ -281,7 +268,16 @@ if string.find(fromData.name, "WEAPON_") then
 				if server.syncInventory then server.syncInventory(playerInv) end
 
 				local message = locale('purchased_for', count, fromItem.label, (currency == 'money' and locale('$') or math.groupdigits(price)), (currency == 'money' and math.groupdigits(price) or ' '..Items(currency).label))
-
+				if string.find(fromData.name, "WEAPON_") then
+					local serial = metadata.serial
+					local imageurl = ("https://cfx-nui-ox_inventory/web/images/%s.png"):format(fromData.name)
+					local notes = "Purchased from shop"
+					local owner = playerInv.owner
+					local weapClass = "Class"
+					local weapModel = fromData.name
+					
+					AddWeaponToMDT(serial, imageurl, notes, owner, weapClass, weapModel)
+				end
 				if server.loglevel > 0 then
 					if server.loglevel > 1 or fromData.price >= 500 then
 						lib.logger(playerInv.owner, 'buyItem', ('"%s" %s'):format(playerInv.label, message:lower()), ('shop:%s'):format(shop.label))
