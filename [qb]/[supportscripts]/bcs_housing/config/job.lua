@@ -8,7 +8,7 @@ JobConfig = {
         maxZ = 170.02
     },
     useJob = true,
-    job_name = 'rea',
+    job_name = 'realestate',
     realEstateFee = 0,   -- how much should realestate pay to create the house? Percentage of the house price, set to 0 to disable
     rentPercentage = 20, -- how much should realestate company receive from rent payments
     grade = {
