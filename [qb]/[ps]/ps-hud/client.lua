@@ -5,6 +5,7 @@ local UIConfig = UIConfig
 local speedMultiplier = config.UseMPH and 2.23694 or 3.6
 local seatbeltOn = false
 local cruiseOn = false
+local pursuitmode = 0
 local showAltitude = false
 local showSeatbelt = false
 local next = next
@@ -793,7 +794,8 @@ local function updatePlayerHud(data)
             nitroActive = data[17],
             harness = data[18],
             hp = data[19],
-            speed = data[20],
+            speed = pursuitmode,
+            pursuit = pursuitmode,
             engine = data[21],
             cinematic = data[22],
             dev = data[23],
@@ -933,7 +935,7 @@ CreateThread(function()
                     oxygen,
                     GetPedParachuteState(player),
                     -1,
-                    cruiseOn,
+                    pursuitmode,
                     nitroActive,
                     harness,
                     hp,
@@ -974,7 +976,7 @@ CreateThread(function()
                     oxygen,
                     GetPedParachuteState(player),
                     nos,
-                    cruiseOn,
+                    pursuitmode,
                     nitroActive,
                     harness,
                     hp,
@@ -1375,4 +1377,9 @@ CreateThread(function()
             Wait(1000)
         end
     end
+end)
+
+RegisterNetEvent('ps-hud:pursuitmode', function(pursuit)
+    PruiseOn = pursuit
+    pursuitmode = pursuit
 end)
