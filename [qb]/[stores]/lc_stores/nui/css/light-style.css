@@ -1,0 +1,64 @@
+.backgound-theme {
+	background-color: #f5f6f8;
+}
+
+.card-theme {
+	background: #fff;
+	border: 1px solid #e3dada;
+}
+
+.filter-card-theme {
+	background-color: #f0f0f0;
+}
+
+.card-featured-theme {
+	background: #ECEDF1
+}
+
+.user-card .card-block .activity-leval li {
+	background-color: #ccc;
+}
+
+.bank-money-title, .bank-loan-title {
+	color: #313443;
+}
+
+.diagnostic-page .card-content:hover{
+	background-color: #dfdfdf;
+}
+
+.sidebar-navigation {
+	background-color: #313443;
+}
+
+.sidebar-navigation ul li .tooltip {
+	background-color: #313443;
+}
+
+.range-slider.overlay {
+	--primary-color: #d6e9ff;
+	color: #0366d6;
+}
+
+.range-slider.overlay input:hover {
+	--thumb-shadow: calc(25px - (50px * var(--is-left-most))) 0 0 -15px #0366d6 inset;
+}
+
+.range-slider {
+	--primary-color: #0366d6;
+	--progress-background: white;
+}
+
+.range-slider__progress {
+	background-color: rgb(255, 255, 255);
+}
+
+.payment-wrapper .option {
+	background: #fff;
+	border: 2px solid lightgrey;
+}
+
+.select2-container--default .select2-selection--single {
+	border: 1px solid #ced4da !important;
+	background-color: #fff !important;
+}
