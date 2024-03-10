@@ -321,6 +321,12 @@ RegisterNetEvent('vehiclekeys:client:SetOwner', function(plate)
 end)
 -- Backwards Compatibility ONLY -- Remove at some point --
 
+AddEventHandler('qb-vehiclekeys:client:setLastPickedVehicle', function(vehicle)
+    lastPickedVehicle = vehicle
+end)
+
+
+
 -----------------------
 ----   Functions   ----
 -----------------------

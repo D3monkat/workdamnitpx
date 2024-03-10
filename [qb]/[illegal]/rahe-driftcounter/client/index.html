@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html class="min-h-screen">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="tailwind.css">
+    <script src="alpine.js" type="text/javascript" defer></script>
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Oswald:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body class="min-h-screen" x-data="{showDriftCounter: false, isCrashActive: false, driftPoints: 0, timeRemainingPercentage: 0, anglePercentage: 0, angle: 0}" x-show="showDriftCounter" x-transition
+      @message.window="
+    if ($event.data.action == 'showDriftCounter') {
+        showDriftCounter = true;
+    }
+    else if ($event.data.action == 'hideDriftCounter') {
+        showDriftCounter = false;
+    }
+    else if ($event.data.action == 'updateDriftCounter') {
+        driftPoints = $event.data.points;
+    }
+    else if ($event.data.action == 'updateTimeRemaining') {
+        timeRemainingPercentage = $event.data.timeRemainingPercentage;
+    }
+    else if ($event.data.action == 'updateAngle') {
+        anglePercentage = $event.data.anglePercentage;
+        angle = $event.data.angle;
+    }
+    else if ($event.data.action == 'setCrashStatus') {
+        isCrashActive = $event.data.status;
+    }
+">
+
+<div class="max-w-sm mx-auto sticky text-center top-[100vh] text-white h-full mb-12">
+    <div class="grid grid-cols-12 px-3">
+        <div class="col-span-12 flex justify-center items-center text-5xl" style="font-family: 'Oswald', sans-serif;">
+            <div class="w-full h-0.5">
+                <div class="h-0.5" :style="`width: ${timeRemainingPercentage}%;`" :class="{'bg-green-500': !isCrashActive, 'bg-red-600': isCrashActive}"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-12 px-3 h-20">
+        <div class="col-span-3 flex justify-center items-center" :class="{'bg-green-500': !isCrashActive, 'bg-red-600': isCrashActive}">
+            <img src="drifticon.png">
+        </div>
+        <div :class="{'border-green-500': !isCrashActive, 'border-red-600': isCrashActive}" class="col-span-9 bg-gray-800 border-r-4 flex justify-center items-center text-5xl" style="font-family: 'Oswald', sans-serif;">
+            <span x-text="driftPoints.toLocaleString()" style="color: rgb(255 255 255)">0</span><span class="ml-2 text-gray-500">PTS</span>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-12 px-3 mt-3 text-sm">
+        <div class="col-span-12 flex justify-center items-center" style="font-family: 'Oswald', sans-serif;  background-color: rgba(0, 0, 0, 0.2);">
+            <div :style="`width: ${anglePercentage}%;`">
+                <div :class="{'bg-green-500': !isCrashActive, 'bg-red-600': isCrashActive}" style="color: rgb(255 255 255);"><span x-text="angle">0</span><span>°</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

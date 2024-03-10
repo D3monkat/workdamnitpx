@@ -3369,6 +3369,48 @@ return {
 			image = "your_image.png",
 		}
 	},
+	['racingtablet'] = {
+		label = 'Racing tablet',
+		weight = 500,
+		description = 'Seems like something to do with cars.',
+		stack = false,
+		client = {
+			export = 'rahe-racing.racingtablet',
+		}
+	},
+	['driftingtablet'] = {
+		label = 'Drifting tablet',
+		weight = 500,
+		description = 'Seems like something to do with cars.',
+		stack = false,
+		client = {
+			export = 'rahe-drifting.driftingtablet',
+		}
+	},
+	['boostingtablet'] = {
+		label = 'Boosting tablet',
+		weight = 0,
+		description = "Seems like something's installed on this.",
+		client = {
+		export = 'rahe-boosting.boostingtablet',
+		}
+	},
+	['hackingdevice'] = {
+		label = 'Hacking device',
+		weight = 0,
+		description = 'Will allow you to bypass vehicle security systems.',
+		client = {
+		export = 'rahe-boosting.hackingdevice',
+		}
+	},
+	['gpshackingdevice'] = {
+		label = 'GPS hacking device',
+		weight = 0,
+		description = 'If you wish to disable vehicle GPS systems.',
+		client = {
+		export = 'rahe-boosting.gpshackingdevice',
+		}
+	},
 
 	["oxygen"] = {
 		label = "Oxygen",
