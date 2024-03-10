@@ -160,7 +160,7 @@ Config = {
     ]]
 
     -- Notifications
-    NotifySystem = 4,
+    NotifySystem = 5,
     --[[
     1: default GTAV style notifications
     2: okokNotify
