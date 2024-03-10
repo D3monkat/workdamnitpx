@@ -508,34 +508,34 @@ Config.market_locations = {
 			['store'] = 'bank',
 		}
 	},
-	["ammunation_1"] = {
-		['buy_price'] = 2000000,
-		['sell_price'] = 500000,
-		['coord'] = {14.470663070679,-1106.0792236328,29.797006607056},
-		['garage_coord'] = {27.71,-1113.25,29.3,329.89},
-		['truck_parking_location'] = {-13.8833,-1125.8661, 27.5543,157.6875},
-		['map_blip_coord'] = {20.91,-1110.49,29.79},
-		['sell_blip_coords'] = {
-			{22.64, -1106.88, 29.8},
-			{20.91, -1110.49, 29.8},
-			{19.58, -1109.95, 29.8}
-		},
-		['deliveryman_coord'] = {18.89,-1116.02,29.79},
-		['type'] = 'ammunation',
-		['account'] = {
-			['item'] = {
-				[1] = {
-					['icon'] = 'img/credit_card.png',
-					['account'] = 'bank'
-				},
-				[2] = {
-					['icon'] = 'img/cash.png',
-					['account'] = 'cash'
-				}
-			},
-			['store'] = 'bank',
-		}
-	}
+	-- ["ammunation_1"] = {
+	-- 	['buy_price'] = 2000000,
+	-- 	['sell_price'] = 500000,
+	-- 	['coord'] = {14.470663070679,-1106.0792236328,29.797006607056},
+	-- 	['garage_coord'] = {27.71,-1113.25,29.3,329.89},
+	-- 	['truck_parking_location'] = {-13.8833,-1125.8661, 27.5543,157.6875},
+	-- 	['map_blip_coord'] = {20.91,-1110.49,29.79},
+	-- 	['sell_blip_coords'] = {
+	-- 		{22.64, -1106.88, 29.8},
+	-- 		{20.91, -1110.49, 29.8},
+	-- 		{19.58, -1109.95, 29.8}
+	-- 	},
+	-- 	['deliveryman_coord'] = {18.89,-1116.02,29.79},
+	-- 	['type'] = 'ammunation',
+	-- 	['account'] = {
+	-- 		['item'] = {
+	-- 			[1] = {
+	-- 				['icon'] = 'img/credit_card.png',
+	-- 				['account'] = 'bank'
+	-- 			},
+	-- 			[2] = {
+	-- 				['icon'] = 'img/cash.png',
+	-- 				['account'] = 'cash'
+	-- 			}
+	-- 		},
+	-- 		['store'] = 'bank',
+	-- 	}
+	-- }
 }
 
 -- Here you configure each type of market available to buy
