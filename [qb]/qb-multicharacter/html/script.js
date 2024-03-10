@@ -227,12 +227,12 @@ $(document).on('click', '.qb-Register-ImageStyle', function(e){
     var genders = $(this).data('gender');
     if(genders == "man"){
         SelectedCharGender = "Male"
-        $('#qb-man').attr('src','https://cdn.discordapp.com/attachments/877595408325574656/878350193475588146/male2.png');
-        $('#qb-woman').attr('src','https://cdn.discordapp.com/attachments/877595408325574656/878254563063369818/female.png');
+        $('#qb-man').attr('src','https://cdn.discordapp.com/attachments/609919544739233812/1216493976899555434/male2.png?ex=6600974d&is=65ee224d&hm=dac986b03eae688936035ec9e66f6310bb0187fb32528f76f439aa65d6466b73&');
+        $('#qb-woman').attr('src','https://cdn.discordapp.com/attachments/609919544739233812/1216493975595384832/female.png?ex=6600974d&is=65ee224d&hm=4bc6f86feb24412b1672054d2bbbdbe1fe039e09b3fe87add99406ad3e71bd65&');
     }else{
         SelectedCharGender = "Female"
-        $('#qb-woman').attr('src','https://cdn.discordapp.com/attachments/877595408325574656/878350146792984616/female2.png');
-        $('#qb-man').attr('src','https://cdn.discordapp.com/attachments/877595408325574656/878254579622502471/male.png');
+        $('#qb-woman').attr('src','https://cdn.discordapp.com/attachments/609919544739233812/1216493976501354598/female2.png?ex=6600974d&is=65ee224d&hm=f981533dfefc12c84a02e1c583ae2a0a6ac708c9d93888c432ba40f76d8a0d03&');
+        $('#qb-man').attr('src','https://cdn.discordapp.com/attachments/609919544739233812/1216493976102899822/male.png?ex=6600974d&is=65ee224d&hm=259105095ab296d809bb00800f4b516ac7ffbaeb69e0ecae07a6390af1be3382&');
     }
 });
 
