@@ -1,0 +1,51 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>hei_kt1_12_strm_0.ymap</Item>
+    <Item>hei_kt1_rd_long_1.ymap</Item>
+    <Item>hei_kt1_rd_strm_1.ymap</Item>
+    <Item>milosdunkindonuts_milo.ymap</Item>
+    <Item>milosexterior.ymap</Item>
+    <Item>kt1_occl_00.ymap</Item>
+    <Item>kt1_occl_01.ymap</Item>
+    <Item>kt1_occl_03.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames>
+    <Item>milosdunkindonuts.ytyp</Item>
+    <Item>milosdunkindonutsexterior.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames>
+    <Item>hi@kt1_12_0.ybn</Item>
+    <Item>kt1_12_0.ybn</Item>
+    <Item>milosdunkindonutscol.ybn</Item>
+  </YbnFilenames>
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+  <YdrFilenames>
+    <Item>miloschickfilaexterior.ydr</Item>
+    <Item>milosdonutbathroom.ydr</Item>
+    <Item>milosdonutlights.ydr</Item>
+    <Item>milosdonutmirror.ydr</Item>
+    <Item>milosdonut_deta.ydr</Item>
+    <Item>milosdonutsone.ydr</Item>
+    <Item>milosdonutstwo.ydr</Item>
+    <Item>milosdonutwindow.ydr</Item>
+    <Item>milosdunkincup.ydr</Item>
+    <Item>milosdunkindonuts.ydr</Item>
+    <Item>milosdunkindonuts-kitchendeta.ydr</Item>
+    <Item>kt1_12_decal.ydr</Item>
+    <Item>kt1_12_shop.ydr</Item>
+    <Item>milosdunkindonutsexterior.ydr</Item>
+    <Item>milosdunkinlights.ydr</Item>
+    <Item>milosplate.ydr</Item>
+    <Item>kt1_12_detail.ydr</Item>
+    <Item>kt1_12_ground.ydr</Item>
+  </YdrFilenames>
+  <YddFilenames />
+  <YftFilenames />
+  <YtdFilenames />
+</CodeWalkerProject>
