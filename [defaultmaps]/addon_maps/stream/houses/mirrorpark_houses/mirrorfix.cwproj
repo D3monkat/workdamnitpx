@@ -1,0 +1,67 @@
+<CodeWalkerProject>
+  <Name>New CodeWalker Project</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>ch3_06_long_0.ymap</Item>
+    <Item>ch3_06_long_1.ymap</Item>
+    <Item>ch3_06_long_2.ymap</Item>
+    <Item>hei_id2_21_g_long_0.ymap</Item>
+    <Item>hei_id2_21_g_strm_0.ymap</Item>
+    <Item>hei_id2_rdb_long_0.ymap</Item>
+    <Item>hei_id2_rdb_strm_2.ymap</Item>
+    <Item>id2_21_g_long_0.ymap</Item>
+    <Item>id2_21_g_night.ymap</Item>
+    <Item>id2_21_g_strm_0.ymap</Item>
+    <Item>id2_rdb_long_0.ymap</Item>
+    <Item>id2_rdb_strm_2.ymap</Item>
+    <Item>vg_cc_interiors.ymap</Item>
+    <Item>vg_cc_map.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames>
+    <Item>indust_02_metadata_013_strm.ytyp</Item>
+    <Item>v_bush.ytyp</Item>
+    <Item>v_construction.ytyp</Item>
+    <Item>v_electrical.ytyp</Item>
+    <Item>v_fences.ytyp</Item>
+    <Item>v_minigame.ytyp</Item>
+    <Item>v_storage.ytyp</Item>
+    <Item>v_traffic_lights.ytyp</Item>
+    <Item>vg_cc_props.ytyp</Item>
+  </YtypFilenames>
+  <YbnFilenames>
+    <Item>hi@id2_21_g_0.ybn</Item>
+    <Item>id2_21_g_0.ybn</Item>
+    <Item>id2_21_g_1.ybn</Item>
+    <Item>id2_rdb_3.ybn</Item>
+  </YbnFilenames>
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+  <YdrFilenames>
+    <Item>ch3_06_land_1a.ydr</Item>
+    <Item>ch3_06_land_03.ydr</Item>
+    <Item>id2_21_g_land3_blend.ydr</Item>
+    <Item>id2_21_g_res_2_grnd.ydr</Item>
+    <Item>id2_21_g_timberfzz01.ydr</Item>
+    <Item>id2_21_g_timberfzz01a.ydr</Item>
+    <Item>id2_21_g_timberfzz02.ydr</Item>
+    <Item>id2_21_g_timberfzz02a.ydr</Item>
+    <Item>id2_21_g_timberfzz02b.ydr</Item>
+    <Item>id2_21_g_woodframes.ydr</Item>
+    <Item>id2_21_g_woodframesb.ydr</Item>
+    <Item>id2_21_g_woodframesc.ydr</Item>
+    <Item>id2_rdb_r3_03.ydr</Item>
+    <Item>id2_rdb_r3_03_o.ydr</Item>
+    <Item>vg_cc_1.ydr</Item>
+    <Item>vg_cc_build_1.ydr</Item>
+    <Item>vg_cc_door.ydr</Item>
+  </YdrFilenames>
+  <YddFilenames />
+  <YftFilenames />
+  <YtdFilenames>
+    <Item>vg_cc_build_texture.ytd</Item>
+    <Item>vg_cc_texture.ytd</Item>
+  </YtdFilenames>
+</CodeWalkerProject>
